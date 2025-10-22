@@ -1,7 +1,15 @@
 // src/hooks/useContentful.ts
-import { useState, useEffect } from "react";
 import { createClient } from "contentful";
+import { useEffect, useState } from "react";
 import type { UseContentfulResult } from "../models/models";
+import { camelCaseToTitle } from "../utils";
+
+const mapCategories = (tags: any[]) => {
+  return tags.map((tag) => ({
+    id: tag.sys.id,
+    title: camelCaseToTitle(tag.sys.id),
+  }));
+};
 
 const client = createClient({
   space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
@@ -25,8 +33,11 @@ export const useContentful = <T,>(
       .then((res) => {
         const mapped: T[] = res.items.map((item: any) => ({
           id: item.sys.id,
+          tags: mapCategories(item.metadata?.tags || []),
           ...item.fields,
         }));
+
+        console.log(mapped);
         setData(mapped);
         setLoading(false);
       })

@@ -13,6 +13,7 @@
   text-decoration: none;
   user-select: none;
   width: fit-content;
+  margin-top: var(--spacing3);
 }
 
 /* Variants */
@@ -26,16 +27,23 @@
   color: var(--light100);
 }
 .button--primary:hover {
-  background-color: var(--primary50);
+  box-shadow: 0px 0px 20px 0px var(--primary50);
+  scale: 0.95;
 }
 
 /* Secondary button */
 .button--secondary {
-  background-color: var(--dark10);
+  background-color: var(--bg);
   color: var(--light100);
 }
 .button--secondary:hover {
-  background-color: var(--dark5);
+  scale: 0.95;
+}
+
+.button--small {
+  font-size: 0.75rem; /* smaller text */
+  padding: var(--spacing2) var(--spacing3); /* smaller padding */
+  margin-top: var(--spacing2);
 }
 
 /* Ghost button */

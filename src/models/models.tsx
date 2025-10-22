@@ -14,20 +14,6 @@ export type RichTextDocument = {
   content: RichTextContent[];
 };
 
-export type ContentfulCategory = {
-  sys: {
-    id: string;
-    type: string;
-    contentType?: { sys: { id: string } };
-    [key: string]: any;
-  };
-  fields: {
-    title: string;
-    slug: string;
-    description: RichTextDocument;
-  };
-};
-
 export type ContentfulImage = {
   sys: {
     id: string;
@@ -55,10 +41,15 @@ export type BlogPage = {
   id: string;
   title: string;
   slug: string;
-  category: ContentfulCategory[];
   body: RichTextDocument;
   image: ContentfulImage;
   excerpt: string;
+  seo?: any;
+  metadata: {
+    tags: { sys: { id: string; type: string; linkType: string } }[];
+    concepts: any[];
+  };
+  tags?: { id: string; title: string }[];
 };
 
 export type UseContentfulResult<T> = {
