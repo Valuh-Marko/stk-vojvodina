@@ -1,0 +1,50 @@
+/* Button base */
+.button {
+  font: var(--p);
+  padding: var(--spacing2) var(--spacing4);
+  border-radius: var(--spacing2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing2);
+  text-decoration: none;
+  user-select: none;
+  width: fit-content;
+}
+
+/* Variants */
+.button--full {
+  width: 100%; /* full width */
+}
+
+/* Primary button */
+.button--primary {
+  background-color: var(--primary100);
+  color: var(--light100);
+}
+.button--primary:hover {
+  background-color: var(--primary50);
+}
+
+/* Secondary button */
+.button--secondary {
+  background-color: var(--dark10);
+  color: var(--light100);
+}
+.button--secondary:hover {
+  background-color: var(--dark5);
+}
+
+/* Ghost button */
+.button--ghost {
+  background-color: transparent;
+  color: var(--primary100);
+  border: 2px solid var(--primary100);
+}
+.button--ghost:hover {
+  background-color: var(--primary50);
+  color: var(--light100);
+}

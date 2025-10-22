@@ -1,0 +1,39 @@
+.c-sidebar-link {
+  color: var(--light50);
+  padding: var(--spacing3) var(--spacing4);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing3);
+}
+
+.c-sidebar-link:hover {
+  background: var(--gradient-light-0-5);
+  cursor: pointer;
+}
+
+.c-sidebar-link.selected {
+  color: var(--light100);
+  position: relative;
+  cursor: default;
+  background: var(--gradient-light-0-5);
+}
+
+.c-sidebar-link.selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background-color: var(--primary100);
+}
+
+.c-sidebar-link__icon {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

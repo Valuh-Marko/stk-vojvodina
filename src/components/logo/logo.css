@@ -1,0 +1,27 @@
+.c-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  padding: var(--spacing4);
+}
+
+.c-logo-img {
+  max-width: 64px;
+  height: auto;
+  margin-bottom: var(--spacing3);
+}
+
+.c-logo-title {
+  font: var(--h2);
+  color: var(--light100);
+  margin-bottom: var(--spacing2);
+}
+
+.c-logo-description {
+  font-size: 0.75rem;
+  line-height: 1.5em;
+  color: var(--light70);
+}
