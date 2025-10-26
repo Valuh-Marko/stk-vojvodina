@@ -1,0 +1,28 @@
+.c-header__link {
+  font: var(--h3);
+  color: var(--light70);
+  padding: var(--spacing2);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--light95);
+  }
+
+  &.active {
+    color: var(--light95);
+    anchor-name: --active-link;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--primary100);
+    left: anchor(left);
+    right: anchor(right);
+    bottom: anchor(bottom);
+    position-anchor: --active-link;
+    transition: 0.3s cubic-bezier(0.75, 0.2, 0.41, 1.31);
+  }
+}

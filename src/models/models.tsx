@@ -1,4 +1,8 @@
+import type { Asset, Entry } from "contentful";
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type Category = "topNews" | "scoreboard" | "events";
+export type TeamNavigationConfig = "seniors" | "coaching-staff" | "delegation";
 
 export type RichTextContent = {
   nodeType: string;
@@ -14,46 +18,53 @@ export type RichTextDocument = {
   content: RichTextContent[];
 };
 
-export type ContentfulImage = {
-  sys: {
-    id: string;
-    [key: string]: any;
-  };
-  fields: {
-    title: string;
-    description: string;
-    file: {
-      url: string;
-      details: {
-        size: number;
-        image?: {
-          width: number;
-          height: number;
-        };
-      };
-      fileName: string;
-      contentType: string;
-    };
-  };
-};
+export interface TypeSeoFields {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+}
 
-export type BlogPage = {
-  id: string;
-  title: string;
+export interface TypeSeoSkeleton {
+  fields: TypeSeoFields;
+  contentTypeId: "seo";
+}
+
+export interface TypeBlogPageFields {
+  title?: string;
   slug: string;
-  body: RichTextDocument;
-  image: ContentfulImage;
-  excerpt: string;
-  seo?: any;
-  metadata: {
-    tags: { sys: { id: string; type: string; linkType: string } }[];
-    concepts: any[];
+  body?: {
+    nodeType: "document";
+    seo?: Entry<TypeSeoSkeleton>;
   };
-  tags?: { id: string; title: string }[];
-};
+  image?: Asset;
+  excerpt?: string;
+  recommendedPosts?: TypeBlogPage[];
+  seo?: Entry<TypeSeoSkeleton>;
+}
+
+export interface TypeBlogPageSkeleton {
+  fields: TypeBlogPageFields;
+  contentTypeId: "blogPage";
+}
+
+export type TypeBlogPage = Entry<TypeBlogPageSkeleton>;
 
 export type UseContentfulResult<T> = {
   data: T[];
   loading: boolean;
   error: Error | null;
 };
+
+export type PlayerFields = {
+  playerName: string;
+  age: string;
+  attributes: string;
+  image?: Asset;
+};
+
+export type PlayerSkeleton = {
+  fields: PlayerFields;
+  contentTypeId: "player";
+};
+
+export type PlayerEntry = Entry<PlayerSkeleton>;

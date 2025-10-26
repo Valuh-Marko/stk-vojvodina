@@ -7,33 +7,173 @@
   box-sizing: border-box;
 }
 
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Variables */
 :root {
   --primary100: oklch(55.57% 0.20969 29.947);
-  --primary50: oklch(55.57% 0.20969 29.947 / 0.5);
+  --primary75: oklch(30.57% 0.20969 29.947);
   --bg: oklch(15.907% 0.00002 271.152);
-  --dark0: oklch(15.907% 0.00002 271.152 / 0);
-  --dark5: oklch(15.907% 0.00002 271.152 / 0.05);
-  --dark10: oklch(15.907% 0.00002 271.152 / 0.1);
+  --bgTransparent: oklch(15.907% 0.00002 271.152 / 0);
+  --dark5: oklch(20.907% 0.00002 271.152);
+  --dark10: oklch(25.907% 0.00002 271.152);
   --light100: oklch(97.015% 0.00011 271.152);
-  --light95: oklch(97.015% 0.00011 271.152 / 0.95);
-  --light70: oklch(97.015% 0.00011 271.152 / 0.7);
-  --light50: oklch(97.015% 0.00011 271.152 / 0.5);
-  --light10: oklch(97.015% 0.00011 271.152 / 0.1);
-  --light5: oklch(97.015% 0.00011 271.152 / 0.05);
-  --gradient-light-0-5: linear-gradient(90deg, var(--dark0), var(--light5));
-  --gradient-dark-0-100: linear-gradient(90deg, var(--dark0), var(--dark100));
+  --light95: oklch(92.015% 0.00011 271.152);
+  --light70: oklch(67.015% 0.00011 271.152);
+  --light50: oklch(47.015% 0.00011 271.152);
+  --light10: oklch(97.015% 0.00011 271.152);
+  --light5: oklch(2.015% 0.00011 271.152);
+  --gradient-0-100: linear-gradient(90deg, var(--bgTransparent) 25%, var(--bg));
+  --gradient-0-10: linear-gradient(
+    90deg,
+    var(--bgTransparent) 25%,
+    var(--dark5)
+  );
   --ff: "Montserrat", sans-serif;
-  --p: 1rem/1.5em var(--ff);
+  --p: 0.75rem/1.5em var(--ff);
   --h1: 600 4rem/1em var(--ff);
   --h2: 600 1.25rem var(--ff);
-  --spacing1: 4px;
-  --spacing2: 8px;
-  --spacing3: 16px;
-  --spacing4: 20px;
-  --spacing5: 40px;
-  --spacing6: 80px;
-  --spacing7: 160px;
+  --h3: 1rem/1.5em var(--ff);
+  --spacing1: 0.25rem;
+  --spacing2: 0.5rem;
+  --spacing3: 1rem;
+  --spacing4: 1.25rem;
+  --spacing5: 2.5rem;
+  --spacing6: 5rem;
+  --spacing7: 10rem;
 }
 
 html {

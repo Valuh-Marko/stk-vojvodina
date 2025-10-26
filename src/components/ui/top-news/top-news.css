@@ -78,6 +78,10 @@
   max-width: 60%;
 }
 
+.c-top-news__excerpt {
+  font: var(--h3);
+}
+
 .c-top-news-highlighted {
   position: absolute;
   z-index: 1;

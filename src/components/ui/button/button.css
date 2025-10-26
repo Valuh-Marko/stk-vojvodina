@@ -27,7 +27,7 @@
   color: var(--light100);
 }
 .button--primary:hover {
-  box-shadow: 0px 0px 20px 0px var(--primary50);
+  box-shadow: 0px 0px 20px 0px var(--primary100);
   scale: 0.95;
 }
 
@@ -53,6 +53,6 @@
   border: 2px solid var(--primary100);
 }
 .button--ghost:hover {
-  background-color: var(--primary50);
+  background-color: var(--primary75);
   color: var(--light100);
 }

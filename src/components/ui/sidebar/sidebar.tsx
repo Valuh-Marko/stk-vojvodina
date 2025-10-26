@@ -1,7 +1,7 @@
 import { SidebarLink } from "./sidebar-link/sidebar-link";
-import { links } from "./constants";
+import { SIDEBAR_LINKS as links } from "../../../utils/constants";
 import { Logo } from "../logo/logo";
-import type { Category } from "../../models/models";
+import type { Category } from "../../../models/models";
 
 type SidebarProps = {
   className?: string;
@@ -17,13 +17,13 @@ export const Sidebar = ({
   return (
     <aside className={`c-sidebar ${className}`}>
       <Logo />
-      {links.map(({ key, label, category, icon }) => (
+      {links.map(({ key, icon }) => (
         <SidebarLink
-          icon={icon}
           key={key}
-          label={label}
-          selected={selectedCategory === category}
-          onClick={() => onCategoryChange?.(category as Category)}
+          icon={icon}
+          linkKey={key}
+          selected={selectedCategory === key}
+          onClick={() => onCategoryChange?.(key as Category)}
         />
       ))}
     </aside>

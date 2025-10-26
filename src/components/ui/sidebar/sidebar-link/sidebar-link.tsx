@@ -1,17 +1,16 @@
 import type { JSX } from "react";
 import "./sidebar-link.css";
+import type { IconType } from "react-icons";
 
 type SidebarLinkProps = {
-  key: string;
-  label: string;
-  icon: JSX.Element;
+  linkKey: string;
+  icon: JSX.Element | IconType;
   selected?: boolean;
   onClick?: () => void;
 };
 
 export const SidebarLink = ({
-  key,
-  label,
+  linkKey,
   icon,
   selected,
   onClick,
@@ -20,10 +19,12 @@ export const SidebarLink = ({
     <div
       className={`c-sidebar-link ${selected ? "selected" : ""}`}
       onClick={onClick}
-      key={key}
+      key={linkKey}
     >
-      <div className="c-sidebar-link__icon">{icon}</div>
-      <div className="c-sidebar-link__label">{label}</div>
+      <div className="c-sidebar-link__icon">
+        {typeof icon === "function" ? icon({}) : icon}
+      </div>
+      <div className="c-sidebar-link__label">{linkKey}</div>
     </div>
   );
 };

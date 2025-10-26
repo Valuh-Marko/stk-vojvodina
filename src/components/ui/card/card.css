@@ -1,0 +1,32 @@
+.c-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing3);
+  width: 100%;
+}
+
+.c-card__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark5);
+}
+
+.c-card__title {
+  position: absolute;
+  left: -0.5rem;
+  padding: var(--spacing3);
+  background-color: var(--dark10);
+
+  &.default {
+    bottom: 10%;
+  }
+
+  &.bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+}

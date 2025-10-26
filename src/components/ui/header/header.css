@@ -1,0 +1,17 @@
+.c-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 10;
+  padding: var(--spacing3) var(--spacing4);
+  background: var(--gradient-0-100);
+}
+
+.c-header__nav {
+  display: flex;
+  gap: var(--spacing4);
+}

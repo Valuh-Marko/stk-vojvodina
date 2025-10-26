@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { useContentful } from "../../hooks/useContentful";
-import type { BlogPage } from "../../models/models";
+import type { TypeBlogPage } from "../../../models/models";
 import { Button } from "../button/button";
 import "./top-news.css";
-import { filterPostsByTag } from "../../utils";
+
+import { useContentful } from "../../../hooks/useContentful";
+import { filterPostsByTag } from "../../../utils";
 
 export const TopNews = () => {
-  const { data: posts, loading, error } = useContentful<BlogPage>("blogPage");
+  const {
+    data: posts,
+    loading,
+    error,
+  } = useContentful<TypeBlogPage>("blogPage");
   const [currentPost, setCurrentPost] = useState(0);
 
   if (loading) return <div>Loading...</div>;
@@ -39,16 +44,20 @@ export const TopNews = () => {
         {/* Main Display */}
         <div
           className="c-top-news"
-          key={topNewsPosts.id}
+          key={topNewsPosts?.sys?.id}
           style={{
-            backgroundImage: ` linear-gradient(oklch(0% 0 0 / 0.65), oklch(0% 0 0 / 0.65)), url(${topNewsPosts.image.fields.file.url})`,
+            backgroundImage: `linear-gradient(oklch(0% 0 0 / 0.65), oklch(0% 0 0 / 0.65)), url(${
+              topNewsPosts?.fields?.image?.fields?.file?.url ?? ""
+            })`,
           }}
         >
           <div className="c-top-news__category">
-            {topNewsPosts?.tags?.[0]?.title}
+            {topNewsPosts?.metadata?.tags?.[0]?.sys.id}
           </div>
-          <h1 className="c-top-news__title">{topNewsPosts.title}</h1>
-          <div className="c-top-news__excerpt">{topNewsPosts.excerpt}</div>
+          <h1 className="c-top-news__title">{topNewsPosts?.fields?.title}</h1>
+          <div className="c-top-news__excerpt">
+            {topNewsPosts?.fields?.excerpt}
+          </div>
           <Button variant="primary">Read More</Button>
         </div>
 
@@ -57,10 +66,10 @@ export const TopNews = () => {
           <div className="c-highlighted-post">
             <div className="c-highlighted-post__content">
               <div className="c-highlighted-post__category">
-                {highlightedPost?.tags?.[0]?.title}
+                {highlightedPost?.metadata?.tags?.[0]?.sys?.id}
               </div>
               <h2 className="c-highlighted-post__title">
-                {highlightedPost.title}
+                {highlightedPost?.fields?.title}
               </h2>
               <Button variant="secondary" size="small">
                 Find Out More
@@ -69,7 +78,9 @@ export const TopNews = () => {
             <div
               className="c-highlighted-post__image"
               style={{
-                backgroundImage: `url(${highlightedPost.image.fields.file.url})`,
+                backgroundImage: `url(${
+                  highlightedPost?.fields?.image?.fields?.file?.url ?? ""
+                })`,
               }}
             />
           </div>

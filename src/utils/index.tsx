@@ -1,12 +1,10 @@
-import type { BlogPage } from "../models/models";
+import type { TypeBlogPage } from "../models/models";
 
-export const filterPostsByTag = (posts: BlogPage[], tagId: string) => {
-  return posts.filter((post) => post.tags?.some((tag) => tag.id === tagId));
-};
-
-export const camelCaseToTitle = (str: string) => {
-  return str
-    .replace(/([A-Z])/g, " $1")
-    .replace(/^./, (char) => char.toUpperCase())
-    .trim();
+export const filterPostsByTag = (
+  posts: TypeBlogPage[],
+  tagId: string
+): TypeBlogPage[] => {
+  return posts.filter((post) =>
+    post.metadata.tags?.some((tag) => tag.sys.id === tagId)
+  );
 };

@@ -1,9 +1,8 @@
-import "./hero.css";
-import { Sidebar } from "../../sidebar/sidebar";
-import { Header } from "../../header/header";
-import { Content } from "../content/content";
 import { useState } from "react";
 import type { Category } from "../../../models/models";
+import { Sidebar } from "../../ui/sidebar/sidebar";
+import { Content } from "./content/content";
+import "./hero.css";
 
 const Hero = () => {
   const [selectedCategory, setSelectedCategory] = useState<
@@ -16,7 +15,6 @@ const Hero = () => {
         onCategoryChange={setSelectedCategory}
         selectedCategory={selectedCategory}
       />
-      <Header />
       <Content selectedCategory={selectedCategory} />
     </div>
   );
