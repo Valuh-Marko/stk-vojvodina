@@ -5,8 +5,12 @@ import "./top-news.css";
 
 import { useContentful } from "../../../hooks/useContentful";
 import { filterPostsByTag } from "../../../utils";
+import { useTranslation } from "react-i18next";
+import Loader from "../loader/loader";
 
 export const TopNews = () => {
+  const { t } = useTranslation(undefined, { keyPrefix: "homepage.top-news" });
+
   const {
     data: posts,
     loading,
@@ -14,7 +18,7 @@ export const TopNews = () => {
   } = useContentful<TypeBlogPage>("blogPage");
   const [currentPost, setCurrentPost] = useState(0);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error</div>;
 
   const topNewsPosts = filterPostsByTag(posts, "topNews")[currentPost];
@@ -58,7 +62,7 @@ export const TopNews = () => {
           <div className="c-top-news__excerpt">
             {topNewsPosts?.fields?.excerpt}
           </div>
-          <Button variant="primary">Read More</Button>
+          <Button variant="primary">{t("read-more-btn")}</Button>
         </div>
 
         {/* Highlighted Post */}
@@ -72,7 +76,7 @@ export const TopNews = () => {
                 {highlightedPost?.fields?.title}
               </h2>
               <Button variant="secondary" size="small">
-                Find Out More
+                {t("find-out-more-btn")}
               </Button>
             </div>
             <div

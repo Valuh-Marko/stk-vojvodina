@@ -1,17 +1,19 @@
 .l-team-section {
   display: flex;
   flex-direction: column;
+  margin: var(--spacing6) 0;
 }
 
 .c-team__cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   align-items: center;
-  justify-content: space-between;
   gap: var(--spacing4);
   padding: 0 var(--spacing4) var(--spacing5) var(--spacing4);
 
   & .c-card__image-wrapper {
     width: 100%;
-    height: 25rem;
+    height: 30rem;
+    overflow: hidden;
   }
 }

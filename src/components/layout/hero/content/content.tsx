@@ -1,9 +1,9 @@
 import type { JSX } from "react";
-import { Events } from "../../../events/events";
-import "./content.css";
 import type { Category } from "../../../../models/models";
 import { TopNews } from "../../../ui/top-news/top-news";
 import { Scoreboard } from "../../../ui/scoreboard/scoreboard";
+import Events from "../../../pages/events/events";
+import "./content.css";
 
 type ContentProps = {
   className?: string;

@@ -1,0 +1,29 @@
+{
+  "navigation": {
+    "home": "Home",
+    "events": "Events",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "topNews": "Top News",
+    "scoreboard": "Scoreboard",
+    "calendar": "Calendar"
+  },
+  "logo": {
+    "desc": "Founded in 1945. Official website of the table tennis club."
+  },
+  "homepage": {
+    "top-news": {
+      "read-more-btn": "Read More",
+      "find-out-more-btn": "Find Out More"
+    },
+    "scoreboard": {
+      "updated-at": "Updated at",
+      "position": "Position",
+      "team": "Team",
+      "played": "Played",
+      "wins": "Wins",
+      "losses": "Losses",
+      "points": "Points"
+    }
+  }
+}

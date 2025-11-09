@@ -1,0 +1,22 @@
+.l-upcoming-matches {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing6) var(--spacing4);
+  background-color: var(--light100);
+  color: var(--dark5);
+  gap: var(--spacing5);
+}
+
+.c-upcoming-matches__title {
+  text-transform: uppercase;
+}
+
+.c-upcoming-matches {
+  display: flex;
+  gap: var(--spacing3);
+  width: 100%;
+}
+
+.c-match-card {
+  width: 100%;
+}

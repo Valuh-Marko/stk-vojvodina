@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 /* Reset */
 * {
@@ -6,11 +7,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
 html,
 body,
@@ -142,9 +138,15 @@ a {
   color: inherit;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Variables */
 :root {
   --primary100: oklch(55.57% 0.20969 29.947);
+  --primary100-50: oklch(55.57% 0.20969 29.947 / 50%);
   --primary75: oklch(30.57% 0.20969 29.947);
   --bg: oklch(15.907% 0.00002 271.152);
   --bgTransparent: oklch(15.907% 0.00002 271.152 / 0);
@@ -154,19 +156,23 @@ a {
   --light95: oklch(92.015% 0.00011 271.152);
   --light70: oklch(67.015% 0.00011 271.152);
   --light50: oklch(47.015% 0.00011 271.152);
-  --light10: oklch(97.015% 0.00011 271.152);
+  --light10: oklch(12.015% 0.00011 271.152);
   --light5: oklch(2.015% 0.00011 271.152);
+  --boxShadow: inset 0 1px 2px oklch(97.015% 0.00011 271.152 / 20%),
+    0 2px 4px oklch(15.907% 0.00002 271.152 / 15%),
+    0 4px 8px oklch(15.907% 0.00002 271.152 / 35%);
   --gradient-0-100: linear-gradient(90deg, var(--bgTransparent) 25%, var(--bg));
   --gradient-0-10: linear-gradient(
     90deg,
     var(--bgTransparent) 25%,
     var(--dark5)
   );
-  --ff: "Montserrat", sans-serif;
-  --p: 0.75rem/1.5em var(--ff);
-  --h1: 600 4rem/1em var(--ff);
-  --h2: 600 1.25rem var(--ff);
-  --h3: 1rem/1.5em var(--ff);
+  --ff: "Thunder", sans-serif;
+  --ff2: "Geist", sans-serif;
+  --p: 300 0.75rem/1.5em var(--ff2);
+  --h1: 700 4rem/0.95em var(--ff);
+  --h2: 600 2rem var(--ff);
+  --h3: 300 1rem/1.5em var(--ff2);
   --spacing1: 0.25rem;
   --spacing2: 0.5rem;
   --spacing3: 1rem;
@@ -190,10 +196,9 @@ body {
 
 h1 {
   font: var(--h1);
-  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
 
 h2 {
   font: var(--h2);
-  letter-spacing: -0.03em;
 }

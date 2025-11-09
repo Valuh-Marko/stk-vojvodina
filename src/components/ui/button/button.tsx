@@ -1,4 +1,5 @@
 import React from "react";
+import { MdDoubleArrow } from "react-icons/md";
 import "./button.css";
 
 type ButtonProps = {
@@ -19,7 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={`button button--${variant} button--${size}`}
       onClick={onClick}
     >
-      {children}
+      {children} <MdDoubleArrow className="button__icon" />
     </button>
   );
 };

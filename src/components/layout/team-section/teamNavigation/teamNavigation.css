@@ -3,6 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing5) var(--spacing4);
+  padding-top: 0;
+}
+
+.c-team-navigation__title {
+  text-transform: uppercase;
 }
 
 .c-team-navigation__cta {

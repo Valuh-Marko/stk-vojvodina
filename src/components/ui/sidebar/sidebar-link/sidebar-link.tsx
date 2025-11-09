@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import "./sidebar-link.css";
 import type { IconType } from "react-icons";
+import { useTranslation } from "react-i18next";
 
 type SidebarLinkProps = {
   linkKey: string;
@@ -15,6 +16,8 @@ export const SidebarLink = ({
   selected,
   onClick,
 }: SidebarLinkProps) => {
+  const { t } = useTranslation(undefined, { keyPrefix: "navigation" });
+
   return (
     <div
       className={`c-sidebar-link ${selected ? "selected" : ""}`}
@@ -24,7 +27,7 @@ export const SidebarLink = ({
       <div className="c-sidebar-link__icon">
         {typeof icon === "function" ? icon({}) : icon}
       </div>
-      <div className="c-sidebar-link__label">{linkKey}</div>
+      <div className="c-sidebar-link__label">{t(linkKey)}</div>
     </div>
   );
 };

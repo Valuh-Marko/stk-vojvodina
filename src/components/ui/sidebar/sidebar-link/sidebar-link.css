@@ -2,7 +2,9 @@
   color: var(--light50);
   padding: var(--spacing3) var(--spacing4);
   font-weight: 600;
-  font: var(--h3);
+  font: var(--p);
+  text-transform: uppercase;
+  font-weight: 500;
   transition: all 0.3s ease;
   line-height: 1rem;
   display: flex;

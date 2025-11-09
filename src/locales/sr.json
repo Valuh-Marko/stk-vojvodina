@@ -1,0 +1,29 @@
+{
+  "navigation": {
+    "home": "Početna",
+    "events": "Događaji",
+    "gallery": "Galerija",
+    "contact": "Kontakt",
+    "topNews": "Najnovije vesti",
+    "scoreboard": "Tabela",
+    "calendar": "Kalendar"
+  },
+  "logo": {
+    "desc": "Osnovan 1945. Zvanični sajt stonoteniskog kluba."
+  },
+  "homepage": {
+    "top-news": {
+      "read-more-btn": "Pročitaj više",
+      "find-out-more-btn": "Saznaj više"
+    },
+    "scoreboard": {
+      "updated-at": "Ažurirano",
+      "position": "Pozicija",
+      "team": "Tim",
+      "played": "Odigrano",
+      "wins": "Pobede",
+      "losses": "Porazi",
+      "points": "Poeni"
+    }
+  }
+}

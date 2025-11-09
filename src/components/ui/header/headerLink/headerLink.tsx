@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import "./headerLink.css";
+import { useTranslation } from "react-i18next";
 
 type HeaderLinkProps = {
   id: string;
@@ -7,6 +8,8 @@ type HeaderLinkProps = {
 };
 
 export const HeaderLink = ({ id, path }: HeaderLinkProps) => {
+  const { t } = useTranslation(undefined, { keyPrefix: "navigation" });
+
   return (
     <NavLink
       to={path}
@@ -14,7 +17,7 @@ export const HeaderLink = ({ id, path }: HeaderLinkProps) => {
         isActive ? "c-header__link active" : "c-header__link"
       }
     >
-      {id}
+      {t(id)}
     </NavLink>
   );
 };

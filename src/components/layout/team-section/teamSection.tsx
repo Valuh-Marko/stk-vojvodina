@@ -25,6 +25,8 @@ const TeamSection = () => {
             players.map((player) => (
               <Card
                 key={player.sys.id}
+                imageUrl={player.fields?.image?.fields?.file?.url}
+                highlighted
                 title={player.fields.playerName as unknown as string}
               />
             ))}

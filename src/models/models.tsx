@@ -68,3 +68,18 @@ export type PlayerSkeleton = {
 };
 
 export type PlayerEntry = Entry<PlayerSkeleton>;
+
+export type ScoreboardFields = {
+  title?: string;
+  scoreboard: {
+    rows: (number | string)[][];
+    timestamp: string;
+  };
+};
+
+export type ScoreboardSkeleton = {
+  fields: ScoreboardFields;
+  contentTypeId: "scoreboard";
+};
+
+export type ScoreboardEntry = Entry<ScoreboardSkeleton>;

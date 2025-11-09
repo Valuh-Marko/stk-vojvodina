@@ -10,16 +10,17 @@ type CardProps = {
   highlighted?: boolean;
   excerpt?: string;
   className?: string;
+  children?: React.ReactNode;
   onClick?: () => void;
 };
 
 const Card = ({
   title,
-  excerpt,
   imageUrl,
   className,
   titlePosition = "default",
   highlighted = false,
+  children,
   onClick,
 }: CardProps) => {
   const handleOnClick = () => {
@@ -49,7 +50,7 @@ const Card = ({
           {title}
         </h3>
       )}
-      {excerpt && <p className="c-card__excerpt">{excerpt}</p>}
+      {children}
     </div>
   );
 };

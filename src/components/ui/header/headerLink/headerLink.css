@@ -1,8 +1,10 @@
 .c-header__link {
-  font: var(--h3);
+  font: var(--p);
   color: var(--light70);
-  padding: var(--spacing2);
+  padding-inline: var(--spacing2);
   transition: color 0.3s ease;
+  font-weight: 500;
+  text-transform: uppercase;
 
   &:hover {
     color: var(--light95);
@@ -22,6 +24,7 @@
     left: anchor(left);
     right: anchor(right);
     bottom: anchor(bottom);
+    transform: translateY(0.25rem);
     position-anchor: --active-link;
     transition: 0.3s cubic-bezier(0.75, 0.2, 0.41, 1.31);
   }

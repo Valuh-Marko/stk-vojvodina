@@ -6,19 +6,21 @@ import { HEADER_LINKS as headerLinks } from "./utils/constants";
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        {headerLinks.map((link) => (
-          <Route
-            key={link.path}
-            path={link.path}
-            element={<link.component />}
-          />
-        ))}
-      </Routes>
-    </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          {headerLinks.map((link) => (
+            <Route
+              key={link.path}
+              path={link.path}
+              element={<link.component />}
+            />
+          ))}
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 

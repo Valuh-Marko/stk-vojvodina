@@ -17,6 +17,7 @@
 .c-logo-title {
   font: var(--h2);
   color: var(--light100);
+  text-transform: uppercase;
   margin-bottom: var(--spacing2);
 }
 
