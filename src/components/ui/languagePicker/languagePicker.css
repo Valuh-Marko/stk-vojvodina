@@ -6,6 +6,7 @@
   font-weight: 500;
   text-transform: uppercase;
   user-select: none;
+  margin-left: var(--spacing2);
 }
 
 .c-language__current {
@@ -20,11 +21,11 @@
 
 .c-language__dropdown {
   min-width: fit-content;
-  background-color: var(--bg);
-  padding: var(--spacing3);
+  background: var(--gradient-0-100);
+  padding: var(--spacing3) var(--spacing4);
   position: absolute;
   top: calc(100% + var(--spacing3));
-  right: calc(0 - var(--spacing3));
+  right: -1.25rem;
   display: flex;
   flex-direction: column;
   gap: var(--spacing3);

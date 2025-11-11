@@ -1,12 +1,11 @@
 import { useState } from "react";
 import type { TypeBlogPage } from "../../../models/models";
 import { Button } from "../button/button";
-import "./top-news.css";
-
+import { useTranslation } from "react-i18next";
 import { useContentful } from "../../../hooks/useContentful";
 import { filterPostsByTag } from "../../../utils";
-import { useTranslation } from "react-i18next";
 import Loader from "../loader/loader";
+import "./top-news.css";
 
 export const TopNews = () => {
   const { t } = useTranslation(undefined, { keyPrefix: "homepage.top-news" });

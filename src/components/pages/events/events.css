@@ -1,0 +1,11 @@
+.l-events-page {
+  padding: var(--spacing6) var(--spacing4);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: var(--spacing4);
+  row-gap: var(--spacing6);
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  }
+}

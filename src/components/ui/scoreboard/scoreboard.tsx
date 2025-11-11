@@ -18,7 +18,12 @@ export const Scoreboard = () => {
   const lastUpdate = formatter.format(timestamp);
 
   return (
-    <div className="l-scoreboard">
+    <div
+      className="l-scoreboard"
+      style={{
+        width: window.innerWidth <= 768 ? window.innerWidth : "100%",
+      }}
+    >
       <div className="c-scoreboard">
         <h2 className="c-scoreboard__title">{title}</h2>
         <p className="c-scoreboard__timestamp">

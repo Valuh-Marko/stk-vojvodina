@@ -25,5 +25,9 @@
       "losses": "Losses",
       "points": "Points"
     }
+  },
+  "single-event": {
+    "released": "Released",
+    "recommendedTitle": "Recommended Posts"
   }
 }

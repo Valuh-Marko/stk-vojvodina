@@ -1,0 +1,25 @@
+.l-gallery-preview {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing6) var(--spacing4);
+  background-color: var(--light100);
+  color: var(--dark5);
+  gap: var(--spacing5);
+}
+
+.c-gallery-preview__title {
+  text-transform: uppercase;
+}
+
+.c-gallery-preview__images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing4);
+  overflow-x: auto;
+}
+
+.c-gallery-preview__image {
+  flex: 1;
+  width: 100%;
+  min-width: 17.5rem;
+}

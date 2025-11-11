@@ -8,12 +8,21 @@
   display: flex;
   align-items: center;
   padding: var(--spacing5);
+
+  @media screen and (max-width: 768px) {
+    padding: var(--spacing6);
+    padding-right: var(--spacing4);
+  }
 }
 
 .c-scoreboard {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-width: 100%;
+
+  @media screen and (max-width: 900px) {
+    overflow-x: auto;
+  }
 }
 
 .c-scoreboard__title {
@@ -40,6 +49,7 @@
   backdrop-filter: blur(5px);
   box-shadow: var(--boxShadow);
   border-radius: 0.5rem;
+  min-width: 40rem;
 }
 
 .c-table__row {

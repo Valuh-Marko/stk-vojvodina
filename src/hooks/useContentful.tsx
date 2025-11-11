@@ -11,7 +11,10 @@ const client = createClient({
 
 export const useContentful = <T,>(
   contentType: string,
-  query: Record<string, any> = {}
+  options?: {
+    id?: string;
+    query?: Record<string, any>;
+  }
 ): UseContentfulResult<T> => {
   const { i18n } = useTranslation();
   const [data, setData] = useState<T[]>([]);
@@ -22,11 +25,26 @@ export const useContentful = <T,>(
     setLoading(true);
     setError(null);
 
+    if (options?.id) {
+      client
+        .getEntry(options?.id, { locale: i18n.language })
+        .then((res) => {
+          setData(res as T);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setError(err);
+          setLoading(false);
+        });
+
+      return;
+    }
+
     client
       .getEntries({
         content_type: contentType,
         locale: i18n.language,
-        ...query,
+        ...options?.query,
       })
       .then((res) => {
         const resolved = resolveResponse(res);
@@ -37,7 +55,7 @@ export const useContentful = <T,>(
         setError(err);
         setLoading(false);
       });
-  }, [contentType, query, i18n.language]);
+  }, [contentType, options, i18n.language]);
 
   return { data, loading, error };
 };

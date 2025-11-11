@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router";
 import Homepage from "./components/pages/homepage/homepage";
 import { Header } from "./components/ui/header/header";
 import { HEADER_LINKS as headerLinks } from "./utils/constants";
+import Footer from "./components/layout/footer/footer";
+import SinglePostPage from "./components/pages/single-post-page/singlePostPage";
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
               element={<link.component />}
             />
           ))}
+          <Route path="/events/:slug" element={<SinglePostPage />} />
         </Routes>
       </Suspense>
+      <Footer />
     </>
   );
 }

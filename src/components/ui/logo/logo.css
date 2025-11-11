@@ -12,6 +12,12 @@
   max-width: 64px;
   height: auto;
   margin-bottom: var(--spacing3);
+
+  @media screen and (max-width: 768px) {
+    max-width: 2rem;
+    top: 1rem;
+    position: absolute;
+  }
 }
 
 .c-logo-title {
@@ -19,10 +25,18 @@
   color: var(--light100);
   text-transform: uppercase;
   margin-bottom: var(--spacing2);
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .c-logo-description {
   font-size: 0.75rem;
   line-height: 1.5em;
   color: var(--light70);
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }

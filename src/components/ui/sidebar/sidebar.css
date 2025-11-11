@@ -1,0 +1,14 @@
+.c-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    justify-content: center;
+    height: 100lvh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+}

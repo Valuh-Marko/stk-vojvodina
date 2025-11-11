@@ -25,5 +25,9 @@
       "losses": "Porazi",
       "points": "Poeni"
     }
+  },
+  "single-event": {
+    "released": "Izdato",
+    "recommendedTitle": "Preporuceni Clanci"
   }
 }

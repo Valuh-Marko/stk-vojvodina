@@ -2,6 +2,7 @@ import { SidebarLink } from "./sidebar-link/sidebar-link";
 import { SIDEBAR_LINKS as links } from "../../../utils/constants";
 import { Logo } from "../logo/logo";
 import type { Category } from "../../../models/models";
+import "./sidebar.css";
 
 type SidebarProps = {
   className?: string;
