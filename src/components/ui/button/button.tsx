@@ -7,6 +7,7 @@ type ButtonProps = {
   size?: "standard" | "small";
   children: React.ReactNode;
   className?: string;
+  type?: "button" | "submit" | "reset" | undefined;
   onClick?: () => void;
 };
 
@@ -15,10 +16,12 @@ export const Button: React.FC<ButtonProps> = ({
   size = "standard",
   children,
   className,
+  type,
   onClick,
 }) => {
   return (
     <button
+      type={type}
       className={`button button--${variant} button--${size} ${className}`}
       onClick={onClick}
     >

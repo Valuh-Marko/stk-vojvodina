@@ -1,0 +1,21 @@
+.l-gallery {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing6) var(--spacing4);
+  gap: var(--spacing5);
+  min-height: 80vh;
+}
+
+.c-gallery__images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  flex-wrap: wrap;
+  gap: var(--spacing4);
+  overflow-x: auto;
+}
+
+.c-gallery__image {
+  flex: 1;
+  width: 100%;
+  min-width: 17.5rem;
+}

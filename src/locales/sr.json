@@ -26,6 +26,9 @@
       "points": "Poeni"
     }
   },
+  "events": {
+    "title": "Događaji"
+  },
   "single-event": {
     "released": "Izdato",
     "recommendedTitle": "Preporuceni Clanci"

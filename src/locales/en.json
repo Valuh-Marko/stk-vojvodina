@@ -26,6 +26,9 @@
       "points": "Points"
     }
   },
+  "events": {
+    "title": "Events"
+  },
   "single-event": {
     "released": "Released",
     "recommendedTitle": "Recommended Posts"

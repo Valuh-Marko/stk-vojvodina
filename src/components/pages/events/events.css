@@ -1,5 +1,15 @@
 .l-events-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing5);
   padding: var(--spacing6) var(--spacing4);
+}
+
+.c-events-page__title {
+}
+
+.c-events {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: var(--spacing4);

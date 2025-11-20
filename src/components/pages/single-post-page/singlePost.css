@@ -7,9 +7,16 @@
 }
 
 .c-single-post {
-  max-width: 42.5rem;
+  max-width: 45rem;
+  padding: var(--spacing5);
+  background-color: var(--dark5);
   display: flex;
   flex-direction: column;
+  border-radius: 1rem;
+
+  @media screen and (max-width: 768px) {
+    padding: var(--spacing4);
+  }
 }
 
 .c-single-post__image {
@@ -23,14 +30,18 @@
 .c-single-post__title {
   font: var(--h1);
   text-transform: uppercase;
-  margin-top: var(--spacing4);
+  margin-top: var(--spacing5);
+
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
 }
 
 .c-single-post__body {
   display: flex;
   flex-direction: column;
   gap: var(--spacing2);
-  margin-top: var(--spacing4);
+  margin-top: var(--spacing5);
 
   & > p {
     font-size: 1rem;

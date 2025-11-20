@@ -8,7 +8,7 @@ const Homepage = () => {
     <>
       <Hero />
       <TeamSection />
-      <UpcomingMatches />
+      {/* <UpcomingMatches /> */}
       <GalleryPreview />
       <img
         src="src/assets/pre-footer.png"
