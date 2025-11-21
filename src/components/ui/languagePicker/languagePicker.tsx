@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import "./languagePicker.css";
 
 const languages = {
-  "en-GB": {
+  "en-US": {
     icon: "/flags/en.svg",
     name: "English",
   },
