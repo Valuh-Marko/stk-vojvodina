@@ -11,7 +11,7 @@ const Homepage = () => {
       {/* <UpcomingMatches /> */}
       <GalleryPreview />
       <img
-        src="src/assets/pre-footer.png"
+        src="/assets/pre-footer.png"
         alt="Decorative Top"
         className="c-pre-image"
         style={{

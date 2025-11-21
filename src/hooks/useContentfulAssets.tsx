@@ -1,8 +1,7 @@
 import { createClient } from "contentful";
+import resolveResponse from "contentful-resolve-response";
 import { useEffect, useState } from "react";
 import type { UseContentfulResult } from "../models/models";
-import resolveResponse from "contentful-resolve-response";
-import { useTranslation } from "react-i18next";
 
 const client = createClient({
   space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,

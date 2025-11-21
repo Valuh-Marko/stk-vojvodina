@@ -20,7 +20,7 @@
   flex-direction: column;
 
   @media screen and (max-width: 768px) {
-    height: 100lvh;
+    height: 100vh;
   }
 }
 
@@ -78,7 +78,7 @@
 
   @media screen and (max-width: 768px) {
     padding: 0 2rem 0 7.5rem;
-    height: 100lvh;
+    height: 100vh;
   }
 }
 
@@ -169,7 +169,7 @@
 }
 
 .c-highlighted-post__image {
-  max-height: 25lvh;
+  max-height: 25vh;
   aspect-ratio: 1 / 1;
   width: 100%;
   flex: 1;
