@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { TeamNavigationConfig } from "../../../../models/models";
 import "./teamNavigation.css";
 
@@ -12,15 +13,16 @@ const TeamNavigation = ({
   selectedTab,
   setSelectedTab,
 }: TeamNavigationProps) => {
+  const { t } = useTranslation(undefined, { keyPrefix: "homepage.our-team" });
   const teamNavigationArr: TeamNavigationConfig[] = [
     "seniors",
-    "coaching-staff",
-    "delegation",
+    // "coaching-staff",
+    // "delegation",
   ];
 
   return (
     <div className={`c-team-navigation ${className ? className : ""}`}>
-      <h2 className="c-team-navigation__title">Our Team</h2>
+      <h2 className="c-team-navigation__title">{t("heading")}</h2>
       <div className="c-team-navigation__cta">
         {teamNavigationArr.map((tab) => (
           <button
@@ -30,7 +32,7 @@ const TeamNavigation = ({
             }`}
             onClick={() => setSelectedTab(tab)}
           >
-            {tab}
+            {t(`navigation.${tab}`)}
           </button>
         ))}
       </div>

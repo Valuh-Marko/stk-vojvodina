@@ -9,7 +9,12 @@ const Events = () => {
   const { t } = useTranslation(undefined, { keyPrefix: "events" });
   const { data: posts, loading } = useContentful<TypeBlogPage>("blogPage");
 
-  if (loading) return <Loader />;
+  if (loading)
+    return (
+      <div className="l-events-page">
+        <Loader />
+      </div>
+    );
 
   return (
     <div className="l-events-page">

@@ -10,5 +10,5 @@ export const HEADER_LINKS = [
 export const SIDEBAR_LINKS = [
   APP_ROUTES.topNews,
   APP_ROUTES.scoreboard,
-  APP_ROUTES.calendar,
+  // APP_ROUTES.calendar,
 ];

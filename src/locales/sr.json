@@ -6,10 +6,15 @@
     "contact": "Kontakt",
     "topNews": "Najnovije vesti",
     "scoreboard": "Tabela",
-    "calendar": "Kalendar"
+    "calendar": "Kalendar",
+    "sponsors": {
+      "sponsors-placeholder": "Spisak naših sponzora biće uskoro objavljen!",
+      "newsletter-input-placeholder": "Prijavite se na naš bilten",
+      "subscribe": "Prijavi se"
+    }
   },
   "logo": {
-    "desc": "Osnovan 1945. Zvanični sajt stonoteniskog kluba."
+    "desc": "Osnovan 1945. godine. Zvanični sajt stonoteniskog kluba."
   },
   "homepage": {
     "top-news": {
@@ -24,13 +29,24 @@
       "wins": "Pobede",
       "losses": "Porazi",
       "points": "Poeni"
+    },
+    "our-team": {
+      "heading": "Naš tim",
+      "navigation": {
+        "seniors": "Seniori",
+        "coaching-staff": "Stručni štab",
+        "delegation": "Delegacija"
+      }
+    },
+    "gallery": {
+      "heading": "Galerija"
     }
   },
   "events": {
     "title": "Događaji"
   },
   "single-event": {
-    "released": "Izdato",
-    "recommendedTitle": "Preporuceni Clanci"
+    "released": "Objavljeno",
+    "recommendedTitle": "Preporučeni članci"
   }
 }

@@ -1,8 +1,10 @@
 .l-events-page {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--spacing5);
   padding: var(--spacing6) var(--spacing4);
+  min-height: 80vh;
 }
 
 .c-events-page__title {

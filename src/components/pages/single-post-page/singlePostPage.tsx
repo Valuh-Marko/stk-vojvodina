@@ -7,6 +7,7 @@ import Loader from "../../ui/loader/loader";
 import { useTranslation } from "react-i18next";
 import EventCard from "../../ui/event-card/event-card";
 import { MdDoubleArrow } from "react-icons/md";
+import { richTextRenderOptions } from "./utils";
 
 const SinglePostPage = () => {
   const { t } = useTranslation(undefined, { keyPrefix: "single-event" });
@@ -21,8 +22,14 @@ const SinglePostPage = () => {
   const title = data?.fields?.title;
   const imageUrl = data?.fields?.image?.fields?.file.url;
   const tags = data?.metadata?.tags;
+  const options = richTextRenderOptions;
 
-  if (loading) return <Loader />;
+  if (loading)
+    return (
+      <div className="l-single-post">
+        <Loader />
+      </div>
+    );
 
   return (
     <div className="l-single-post">
@@ -41,7 +48,7 @@ const SinglePostPage = () => {
         </div>
         <hr />
         <div className="c-single-post__body">
-          {documentToReactComponents(data?.fields?.body)}
+          {documentToReactComponents(data?.fields?.body, options)}
         </div>
         {data.fields.recommendedPosts ? (
           <div className="c-single-post__recommended">

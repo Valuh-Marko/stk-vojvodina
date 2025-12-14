@@ -6,7 +6,12 @@
     "contact": "Contact",
     "topNews": "Top News",
     "scoreboard": "Scoreboard",
-    "calendar": "Calendar"
+    "calendar": "Calendar",
+    "sponsors": {
+      "sponsors-placeholder": "List of our sponsors will be announced soon!",
+      "newsletter-input-placeholder": "Subscribe to our newsletter",
+      "subscribe": "Subscribe"
+    }
   },
   "logo": {
     "desc": "Founded in 1945. Official website of the table tennis club."
@@ -24,6 +29,17 @@
       "wins": "Wins",
       "losses": "Losses",
       "points": "Points"
+    },
+    "our-team": {
+      "heading": "Our Team",
+      "navigation": {
+        "seniors": "Seniors",
+        "coaching-staff": "Coaching Staff",
+        "delegation": "Delegation"
+      }
+    },
+    "gallery": {
+      "heading": "Gallery"
     }
   },
   "events": {

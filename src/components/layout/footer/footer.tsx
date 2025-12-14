@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import "./footer.css";
 import { MdDoubleArrow, MdOutlineMail } from "react-icons/md";
 import { CiLocationArrow1, CiPhone } from "react-icons/ci";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   const { t } = useTranslation(undefined, { keyPrefix: "navigation" });
@@ -13,15 +14,15 @@ const Footer = () => {
     <footer className="l-footer">
       <div className="c-footer">
         <div className="c-footer__top">
-          <p>Ovo je placeholder za sve sponzore koje imamo</p>
+          <p>{t(`sponsors.sponsors-placeholder`)}</p>
           <div className="c-footer__newsletter">
             <input
               className="c-footer__input"
-              placeholder="Subscribe to our newsletter"
+              placeholder={t("sponsors.newsletter-input-placeholder")}
               type="text"
             />
             <Button className="c-footer__button" variant="secondary">
-              Prijavi se
+              {t("sponsors.subscribe")}
             </Button>
           </div>
           <div className="c-footer__socials">
@@ -63,9 +64,13 @@ const Footer = () => {
           </div>
           <div className="c-footer__navigation">
             {links.map(({ key, path }) => (
-              <a key={key} href={path} className="c-footer__navigation-link">
+              <NavLink
+                key={key}
+                to={path}
+                className="c-footer__navigation-link"
+              >
                 {t(key)} <MdDoubleArrow className="button__icon" />
-              </a>
+              </NavLink>
             ))}
           </div>
           <p className="c-footer__disclaimer">

@@ -6,9 +6,11 @@ import { useContentful } from "../../../hooks/useContentful";
 import { filterPostsByTag } from "../../../utils";
 import Loader from "../loader/loader";
 import "./top-news.css";
+import { useNavigate } from "react-router";
 
 export const TopNews = () => {
   const { t } = useTranslation(undefined, { keyPrefix: "homepage.top-news" });
+  const navigate = useNavigate();
 
   const {
     data: posts,
@@ -17,7 +19,12 @@ export const TopNews = () => {
   } = useContentful<TypeBlogPage>("blogPage");
   const [currentPost, setCurrentPost] = useState(0);
 
-  if (loading) return <Loader />;
+  if (loading)
+    return (
+      <div className="c-top-news-wrapper">
+        <Loader />
+      </div>
+    );
   if (error) return <div>Error</div>;
 
   const topNewsPosts = filterPostsByTag(posts, "topNews")[currentPost];
@@ -61,7 +68,12 @@ export const TopNews = () => {
           <div className="c-top-news__excerpt">
             {topNewsPosts?.fields?.excerpt}
           </div>
-          <Button variant="primary">{t("read-more-btn")}</Button>
+          <Button
+            onClick={() => navigate(`/events/${topNewsPosts?.sys?.id}`)}
+            variant="primary"
+          >
+            {t("read-more-btn")}
+          </Button>
         </div>
 
         {/* Highlighted Post */}
@@ -74,7 +86,11 @@ export const TopNews = () => {
               <h2 className="c-highlighted-post__title">
                 {highlightedPost?.fields?.title}
               </h2>
-              <Button variant="secondary" size="small">
+              <Button
+                onClick={() => navigate(`/events/${highlightedPost?.sys?.id}`)}
+                variant="secondary"
+                size="small"
+              >
                 {t("find-out-more-btn")}
               </Button>
             </div>

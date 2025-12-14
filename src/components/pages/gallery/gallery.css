@@ -1,6 +1,7 @@
 .l-gallery {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: var(--spacing6) var(--spacing4);
   gap: var(--spacing5);
   min-height: 80vh;

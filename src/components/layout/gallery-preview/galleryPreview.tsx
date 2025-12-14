@@ -3,7 +3,11 @@ import Card from "../../ui/card/card";
 import "./gallery-preview.css";
 
 const GalleryPreview = () => {
-  const { data, loading, error } = useContentfulAssets(["gallery"], {}, 4);
+  const { data, loading, error } = useContentfulAssets(
+    ["highlightedGalery"],
+    {},
+    4
+  );
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;

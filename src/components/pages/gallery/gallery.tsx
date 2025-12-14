@@ -1,11 +1,17 @@
 import { useContentfulAssets } from "../../../hooks/useContentfulAssets";
 import Card from "../../ui/card/card";
+import Loader from "../../ui/loader/loader";
 import "./gallery.css";
 
 const Gallery = () => {
   const { data, loading, error } = useContentfulAssets(["gallery"], {});
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="l-gallery">
+        <Loader />
+      </div>
+    );
   if (error) return <div>Error: {error.message}</div>;
 
   return (
