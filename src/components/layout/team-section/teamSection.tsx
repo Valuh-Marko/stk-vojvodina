@@ -13,6 +13,8 @@ const TeamSection = () => {
   const [selectedTab, setSelectedTab] =
     useState<TeamNavigationConfig>("seniors");
 
+  console.log(players);
+
   return (
     <Suspense>
       <div className="l-team-section">
@@ -28,6 +30,7 @@ const TeamSection = () => {
                 imageUrl={player.fields?.image?.fields?.file?.url}
                 highlighted
                 title={player.fields.playerName as unknown as string}
+                excerpt={player.fields.playerAtributes}
               />
             ))}
         </div>

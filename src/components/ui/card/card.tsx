@@ -1,5 +1,7 @@
 import { PiPlaceholderDuotone } from "react-icons/pi";
 import "./card.css";
+import { useEffect, type ReactNode } from "react";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 type TitlePosition = "default" | "bottom-right";
 
@@ -8,7 +10,7 @@ type CardProps = {
   titlePosition?: TitlePosition;
   imageUrl?: string;
   highlighted?: boolean;
-  excerpt?: string;
+  excerpt?: any;
   className?: string;
   children?: React.ReactNode;
   onClick?: () => void;
@@ -20,6 +22,7 @@ const Card = ({
   className,
   titlePosition = "default",
   highlighted = false,
+  excerpt,
   children,
   onClick,
 }: CardProps) => {
@@ -29,28 +32,40 @@ const Card = ({
     }
   };
 
+  useEffect(() => {
+    console.log(excerpt);
+  });
+
   return (
-    <div
-      className={`c-card ${className ? className : ""}`}
-      onClick={() => handleOnClick}
-    >
-      <div className="c-card__image-wrapper">
-        {imageUrl ? (
-          <img src={imageUrl} alt={`{title}-image`} className="c-card__image" />
-        ) : (
-          <PiPlaceholderDuotone />
+    <div className={`c-card-wrapper ${className ? className : ""}`}>
+      <div className={`c-card `} onClick={() => handleOnClick}>
+        <div className="c-card__image-wrapper">
+          {imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={`{title}-image`}
+              className="c-card__image"
+            />
+          ) : (
+            <PiPlaceholderDuotone />
+          )}
+        </div>
+        {title && (
+          <h3
+            className={`c-card__title ${titlePosition} ${
+              highlighted ? "highlighted" : ""
+            }`}
+          >
+            {title}
+          </h3>
         )}
+        {children}
       </div>
-      {title && (
-        <h3
-          className={`c-card__title ${titlePosition} ${
-            highlighted ? "highlighted" : ""
-          }`}
-        >
-          {title}
-        </h3>
-      )}
-      {children}
+      {excerpt ? (
+        <div className="c-card-attributes">
+          {documentToReactComponents(excerpt)}
+        </div>
+      ) : null}
     </div>
   );
 };

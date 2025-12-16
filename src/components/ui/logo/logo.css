@@ -14,9 +14,7 @@
   margin-bottom: var(--spacing3);
 
   @media screen and (max-width: 768px) {
-    max-width: 2rem;
-    top: 1rem;
-    position: absolute;
+    display: none;
   }
 }
 

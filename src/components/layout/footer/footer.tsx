@@ -1,4 +1,5 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { SOCIALS_LINKS as socialLinks } from "../../../utils/constants";
 import { Button } from "../../ui/button/button";
 import { HEADER_LINKS as links } from "../../../utils/constants";
 import { useTranslation } from "react-i18next";
@@ -26,15 +27,11 @@ const Footer = () => {
             </Button>
           </div>
           <div className="c-footer__socials">
-            <a href="#" className="c-footer__socials-link">
-              <FaFacebookF />
-            </a>
-            <a href="#" className="c-footer__socials-link">
-              <FaInstagram />
-            </a>
-            <a href="#" className="c-footer__socials-link">
-              <FaLinkedinIn />
-            </a>
+            {socialLinks.map(({ url, icon }) => (
+              <a href={url} target="_blank" className="c-footer__socials-link">
+                {icon}
+              </a>
+            ))}
           </div>
         </div>
         <div className="c-footer__bottom">
