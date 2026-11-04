@@ -1,6 +1,8 @@
+import type { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
+import type { Asset } from "contentful";
 
-export const richTextRenderOptions = {
+export const richTextRenderOptions: Options = {
   renderMark: {
     [MARKS.BOLD]: (text: React.ReactNode) => (
       <strong className="rt-bold">{text}</strong>
@@ -15,35 +17,35 @@ export const richTextRenderOptions = {
 
   renderNode: {
     // Headings
-    [BLOCKS.HEADING_1]: (_: any, children: React.ReactNode) => (
+    [BLOCKS.HEADING_1]: (_, children) => (
       <h1 className="rt-h1">{children}</h1>
     ),
-    [BLOCKS.HEADING_2]: (_: any, children: React.ReactNode) => (
+    [BLOCKS.HEADING_2]: (_, children) => (
       <h2 className="rt-h2">{children}</h2>
     ),
-    [BLOCKS.HEADING_3]: (_: any, children: React.ReactNode) => (
+    [BLOCKS.HEADING_3]: (_, children) => (
       <h3 className="rt-h3">{children}</h3>
     ),
 
     // Paragraph
-    [BLOCKS.PARAGRAPH]: (_: any, children: React.ReactNode) => (
+    [BLOCKS.PARAGRAPH]: (_, children) => (
       <p className="rt-p">{children}</p>
     ),
 
     // Lists
-    [BLOCKS.UL_LIST]: (_: any, children: React.ReactNode) => (
+    [BLOCKS.UL_LIST]: (_, children) => (
       <ul className="rt-ul">{children}</ul>
     ),
-    [BLOCKS.OL_LIST]: (_: any, children: React.ReactNode) => (
+    [BLOCKS.OL_LIST]: (_, children) => (
       <ol className="rt-ol">{children}</ol>
     ),
-    [BLOCKS.LIST_ITEM]: (_: any, children: React.ReactNode) => (
+    [BLOCKS.LIST_ITEM]: (_, children) => (
       <li className="rt-li">{children}</li>
     ),
 
     // Embedded image (OPTIMIZED)
-    [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-      const asset = node.data.target;
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      const asset: Asset<undefined> | undefined = node.data.target;
 
       if (!asset?.fields?.file) return null;
 
@@ -66,7 +68,7 @@ export const richTextRenderOptions = {
     },
 
     // Links
-    [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
+    [INLINES.HYPERLINK]: (node, children) => (
       <a
         href={node.data.uri}
         className="rt-link"

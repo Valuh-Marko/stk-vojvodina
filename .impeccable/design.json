@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T17:19:53.661Z",
+  "title": "Design System: STK Vojvodina",
+  "extensions": {
+    "colorMeta": {
+      "crest-red": {
+        "role": "primary",
+        "displayName": "Crest Red",
+        "canonical": "oklch(55.57% 0.20969 29.947)",
+        "tonalRamp": [
+          "oklch(15% 0.090 29.9)",
+          "oklch(26% 0.156 29.9)",
+          "oklch(37% 0.210 29.9)",
+          "oklch(48% 0.210 29.9)",
+          "oklch(59% 0.210 29.9)",
+          "oklch(70% 0.180 29.9)",
+          "oklch(82% 0.108 29.9)",
+          "oklch(95% 0.030 29.9)"
+        ]
+      },
+      "crest-red-glass": {
+        "role": "primary",
+        "displayName": "Crest Red Glass",
+        "canonical": "oklch(55.57% 0.20969 29.947 / 50%)",
+        "tonalRamp": [
+          "oklch(15% 0.090 29.9)",
+          "oklch(26% 0.156 29.9)",
+          "oklch(37% 0.210 29.9)",
+          "oklch(48% 0.210 29.9)",
+          "oklch(59% 0.210 29.9)",
+          "oklch(70% 0.180 29.9)",
+          "oklch(82% 0.108 29.9)",
+          "oklch(95% 0.030 29.9)"
+        ]
+      },
+      "deep-red": {
+        "role": "primary",
+        "displayName": "Deep Red",
+        "canonical": "oklch(30.57% 0.20969 29.947)",
+        "tonalRamp": [
+          "oklch(15% 0.090 29.9)",
+          "oklch(26% 0.156 29.9)",
+          "oklch(37% 0.210 29.9)",
+          "oklch(48% 0.210 29.9)",
+          "oklch(59% 0.210 29.9)",
+          "oklch(70% 0.180 29.9)",
+          "oklch(82% 0.108 29.9)",
+          "oklch(95% 0.030 29.9)"
+        ]
+      },
+      "hall-black": {
+        "role": "neutral",
+        "displayName": "Hall Black",
+        "canonical": "oklch(15.907% 0.00002 271.152)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      },
+      "hall-charcoal": {
+        "role": "neutral",
+        "displayName": "Hall Charcoal",
+        "canonical": "oklch(20.907% 0.00002 271.152)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      },
+      "hall-graphite": {
+        "role": "neutral",
+        "displayName": "Hall Graphite",
+        "canonical": "oklch(25.907% 0.00002 271.152)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      },
+      "floodlight-white": {
+        "role": "neutral",
+        "displayName": "Floodlight White",
+        "canonical": "oklch(97.015% 0.00011 271.152)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      },
+      "chalk": {
+        "role": "neutral",
+        "displayName": "Chalk",
+        "canonical": "oklch(92.015% 0.00011 271.152)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      },
+      "ash-grey": {
+        "role": "neutral",
+        "displayName": "Ash Grey",
+        "canonical": "oklch(67.015% 0.00011 271.152)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      },
+      "line-grey": {
+        "role": "neutral",
+        "displayName": "Line Grey",
+        "canonical": "oklch(47.015% 0.00011 271.152)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      },
+      "pane-black": {
+        "role": "neutral",
+        "displayName": "Pane Black",
+        "canonical": "oklch(2.015% 0.00011 271.152 / 50%)",
+        "tonalRamp": [
+          "oklch(2.015% 0.00011 271.152)",
+          "oklch(15.907% 0.00002 271.152)",
+          "oklch(20.907% 0.00002 271.152)",
+          "oklch(25.907% 0.00002 271.152)",
+          "oklch(47.015% 0.00011 271.152)",
+          "oklch(67.015% 0.00011 271.152)",
+          "oklch(92.015% 0.00011 271.152)",
+          "oklch(97.015% 0.00011 271.152)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page and news headlines in uppercase Thunder."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and the club name."
+      },
+      "title-card": {
+        "displayName": "Title Card",
+        "purpose": "News card titles in Geist."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Lead paragraphs, team tabs and footer column titles."
+      },
+      "body-reading": {
+        "displayName": "Body Reading",
+        "purpose": "Article text on single post pages."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Short text, table cells and metadata."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation and buttons."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-edge",
+        "value": "inset 0 1px 2px oklch(97.015% 0.00011 271.152 / 20%), 0 2px 4px oklch(15.907% 0.00002 271.152 / 15%), 0 4px 8px oklch(15.907% 0.00002 271.152 / 35%)",
+        "purpose": "Lit top edge and soft drop for glass panels over photos, paired with a 5-10px background blur."
+      },
+      {
+        "name": "red-glow",
+        "value": "0px 0px 20px 0px oklch(55.57% 0.20969 29.947)",
+        "purpose": "Primary button hover only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "press-in",
+        "value": "0.2s ease",
+        "purpose": "Button hover, scaling to 0.95."
+      },
+      {
+        "name": "underline-slide",
+        "value": "0.3s cubic-bezier(0.75, 0.2, 0.41, 1.31)",
+        "purpose": "Active underline moving between links, with a slight overshoot."
+      },
+      {
+        "name": "link-colour",
+        "value": "0.3s ease",
+        "purpose": "Navigation and sidebar state changes."
+      },
+      {
+        "name": "link-spotlight",
+        "value": "180ms ease-out",
+        "purpose": "Footer and contact link hover."
+      },
+      {
+        "name": "photo-lift",
+        "value": "360ms ease-in-out",
+        "purpose": "News card and player photos scaling to 1.05 on hover."
+      },
+      {
+        "name": "pixel-strip",
+        "value": "280ms cubic-bezier(0.16, 1, 0.3, 1), 20ms shuffled stagger",
+        "purpose": "Tooltip strips assembling out of order. A plain 120ms fade under reduced motion."
+      },
+      {
+        "name": "loader-morph",
+        "value": "1.5s cubic-bezier(0.3, 1, 0, 1)",
+        "purpose": "The four-square loader."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "Lenis, lerp 0.12",
+        "purpose": "Site-wide smooth wheel scrolling."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "768px"
+      },
+      {
+        "name": "table-short-headers",
+        "value": "40rem (container)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action on a screen, with the forward double arrow and a press-in plus red glow on hover.",
+      "html": "<button class=\"ds-btn-primary\">Pročitaj više <svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M15.5 5H11l5 7-5 7h4.5l5-7z\"/><path d=\"M8.5 5H4l5 7-5 7h4.5l5-7z\"/></svg></button>",
+      "css": ".ds-btn-primary{font:var(--p);padding:var(--spacing2) var(--spacing4);border-radius:var(--spacing2);border:none;cursor:pointer;transition:all .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing2);width:fit-content;background-color:var(--primary100);color:var(--light100);font-weight:500;} .ds-btn-primary:hover{box-shadow:0 0 20px 0 var(--primary100);scale:.95;}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hall Black button for white bands and light tiles.",
+      "html": "<div class=\"ds-light-tile\"><button class=\"ds-btn-secondary\">Saznaj više <svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M15.5 5H11l5 7-5 7h4.5l5-7z\"/><path d=\"M8.5 5H4l5 7-5 7h4.5l5-7z\"/></svg></button></div>",
+      "css": ".ds-light-tile{background:var(--light100);padding:var(--spacing4);} .ds-btn-secondary{font:var(--p);padding:var(--spacing2) var(--spacing4);border-radius:var(--spacing2);border:none;cursor:pointer;transition:all .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing2);width:fit-content;background-color:var(--bg);color:var(--light100);} .ds-btn-secondary:hover{scale:.95;}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outlined red button. Defined but currently unused.",
+      "html": "<button class=\"ds-btn-ghost\">Saznaj više <svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M15.5 5H11l5 7-5 7h4.5l5-7z\"/><path d=\"M8.5 5H4l5 7-5 7h4.5l5-7z\"/></svg></button>",
+      "css": ".ds-btn-ghost{font:var(--p);padding:var(--spacing2) var(--spacing4);border-radius:var(--spacing2);border:none;cursor:pointer;transition:all .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing2);width:fit-content;background-color:transparent;color:var(--primary100);border:2px solid var(--primary100);} .ds-btn-ghost:hover{background-color:var(--primary75);color:var(--light100);}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Graphite field on a Charcoal form card. No focus treatment exists yet, so none is shown.",
+      "html": "<div class=\"ds-form-card\"><label class=\"ds-label\" for=\"ds-email\">Email</label><input id=\"ds-email\" class=\"ds-input\" type=\"email\" placeholder=\"ime@primer.rs\"></div>",
+      "css": ".ds-form-card{display:flex;flex-direction:column;gap:.5rem;background:var(--dark5);color:var(--light95);padding:1.5rem;border-radius:.75rem;} .ds-label{font:var(--p);font-size:.875rem;font-weight:500;} .ds-input{width:100%;padding:.625rem .75rem;border:1px solid oklch(from var(--bg) l c h / .5);background:var(--dark10);color:var(--light95);border-radius:.5rem;font-size:1rem;font-family:inherit;outline:none;}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Uppercase links with a 2px Crest Red underline on the active link. The live site slides it with anchor positioning; this snippet shows it static.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-is-active\" href=\"#\">Početna</a><a class=\"ds-nav-link\" href=\"#\">Događaji</a><a class=\"ds-nav-link\" href=\"#\">Galerija</a><a class=\"ds-nav-link\" href=\"#\">Kontakt</a></nav>",
+      "css": ".ds-nav{display:flex;gap:var(--spacing4);background:var(--bg);padding:var(--spacing3) var(--spacing4);} .ds-nav-link{position:relative;font:var(--p);font-weight:500;color:var(--light70);padding-inline:var(--spacing2);text-transform:uppercase;text-decoration:none;transition:color .3s ease;} .ds-nav-link:hover,.ds-nav-link.ds-is-active{color:var(--light95);} .ds-nav-link.ds-is-active::after{content:\"\";position:absolute;left:0;right:0;bottom:-.25rem;height:2px;border-radius:2px;background:var(--primary100);}"
+    },
+    {
+      "name": "Player Roster",
+      "kind": "custom",
+      "refersTo": "player-frame",
+      "description": "One row of small face-cropped frames in full colour, with the name below in Thunder. Details live in the tooltip. The empty wells stand in for photos.",
+      "html": "<div class=\"ds-roster\"><button class=\"ds-roster-player\" type=\"button\"><span class=\"ds-roster-frame\"></span><span class=\"ds-roster-name\">Ime Igrača</span></button><button class=\"ds-roster-player\" type=\"button\"><span class=\"ds-roster-frame\"></span><span class=\"ds-roster-name\">Ime Igrača</span></button></div>",
+      "css": ".ds-roster{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(7.75rem,1fr);gap:var(--spacing3);background:var(--bg);padding:var(--spacing4);} .ds-roster-player{display:block;padding:0;border:none;background:none;color:var(--light100);text-align:start;cursor:pointer;} .ds-roster-frame{display:block;aspect-ratio:4/5;border-radius:var(--radius);background:var(--dark5);} .ds-roster-name{display:block;margin-top:var(--spacing3);font:600 1.5rem/1.1 var(--ff);text-transform:uppercase;}"
+    },
+    {
+      "name": "Tooltip",
+      "kind": "custom",
+      "refersTo": "tooltip",
+      "description": "A Crest Red panel that assembles from vertical strips at the cursor, or beside the trigger on focus and tap. Shown here at rest, with player content.",
+      "html": "<div class=\"ds-tooltip\"><p class=\"ds-tooltip-name\">Ime Igrača</p><dl class=\"ds-tooltip-rows\"><div><dt>Stil igre</dt><dd>napadač</dd></div><div><dt>Igračka ruka</dt><dd>desna</dd></div></dl></div>",
+      "css": ".ds-tooltip{width:19rem;padding:var(--spacing3);border-radius:var(--radius);background:var(--primary100);color:var(--light100);font-family:var(--ff2);box-shadow:0 0.25rem 0.5rem color-mix(in oklch,var(--bg) 35%,transparent);} .ds-tooltip-name{margin:0 0 var(--spacing2);font:600 1.5rem/1.1 var(--ff);text-transform:uppercase;} .ds-tooltip-rows{display:grid;gap:var(--spacing1);margin:0;font-size:0.875rem;line-height:1.4;} .ds-tooltip-rows div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:var(--spacing2);} .ds-tooltip-rows dt{font-weight:300;} .ds-tooltip-rows dd{margin:0;font-weight:500;}"
+    },
+    {
+      "name": "Category Marker",
+      "kind": "chip",
+      "refersTo": "category-marker",
+      "description": "Hard Crest Red square with an underlined label, used above news headlines.",
+      "html": "<div class=\"ds-category\">Vesti</div>",
+      "css": ".ds-category{display:flex;align-items:center;font:var(--p);font-weight:500;text-decoration:underline;color:var(--light95);} .ds-category::before{content:\"\";display:inline-block;width:var(--spacing3);height:var(--spacing3);margin-right:var(--spacing2);background-color:var(--primary100);}"
+    },
+    {
+      "name": "Channel Sidebar Link",
+      "kind": "custom",
+      "refersTo": "sidebar-link",
+      "description": "Switches what the home stage shows; the selected link gets a 2px Crest Red edge. Resting links use Ash Grey.",
+      "html": "<div class=\"ds-side\"><a class=\"ds-side-link ds-is-selected\">Vesti</a><a class=\"ds-side-link\">Tabela</a></div>",
+      "css": ".ds-side{display:flex;flex-direction:column;width:15rem;background:var(--bg);} .ds-side-link{position:relative;display:flex;align-items:center;gap:var(--spacing3);padding:var(--spacing3) var(--spacing4);font:var(--p);font-weight:500;line-height:1rem;text-transform:uppercase;color:var(--light70);cursor:pointer;transition:all .3s ease;} .ds-side-link:hover{background:var(--gradient-0-10);} .ds-side-link.ds-is-selected{color:var(--light100);background:var(--gradient-0-10);cursor:default;} .ds-side-link.ds-is-selected::after{content:\"\";position:absolute;top:0;right:0;width:2px;height:100%;background-color:var(--primary100);}"
+    },
+    {
+      "name": "League Table",
+      "kind": "custom",
+      "refersTo": "league-table",
+      "description": "Smoked glass table over a darkened photo, set in Geist so Cyrillic team names render properly. Rows here are placeholders; the live table reads from Contentful.",
+      "html": "<div class=\"ds-table-wrap\"><div class=\"ds-table\"><div class=\"ds-row ds-row-head\"><div>Pozicija</div><div>Tim</div><div>Poeni</div></div><div class=\"ds-row\"><div>1</div><div>Тим А</div><div>0</div></div><div class=\"ds-row\"><div>2</div><div>Тим Б</div><div>0</div></div></div></div>",
+      "css": ".ds-table-wrap{padding:var(--spacing5);background:var(--dark10);} .ds-table{display:grid;grid-template-columns:1fr 2fr 1fr;padding:var(--spacing4) var(--spacing5);background:oklch(2.015% .00011 271.152 / 50%);backdrop-filter:blur(5px);box-shadow:var(--boxShadow);border-radius:.5rem;color:var(--light95);font:var(--p);} .ds-row{grid-column:span 3;display:grid;grid-template-columns:subgrid;border-bottom:1px solid var(--light50);} .ds-row:last-of-type{border-bottom:none;} .ds-row-head{font-weight:600;} .ds-row>div{padding:var(--spacing2) var(--spacing2) var(--spacing2) var(--spacing3);border-right:1px solid var(--light50);} .ds-row>div:last-of-type{border-right:none;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Floodlit Hall",
+    "overview": "A dark sports hall with the light on the table. The page is the unlit room: near-black, colourless and quiet. What matters right now is what gets lit: a photo, a headline, a league table. Crest Red is the one coloured light in the building, and it only ever marks what is in play: the active link, the current section, the next action.\n\nThe system is confident and athletic. Tall condensed headlines stand at full height and speak in capitals, the way a name reads on a hall banner. Controls are compact and move fast. Full-screen photo panels do the heavy lifting, with small, precise interface details around them rather than decoration. Density stays low on the home page and tightens only where the data needs it, such as the league table.\n\nThe site must never read as corporate and sterile, with polish and no sport in it. It must never read as a playful kids' club either, even though youth work is central to the club's story. Youth is shown with the same seriousness as the first team.",
+    "keyCharacteristics": [
+      "Near-black, fully neutral surfaces with a single red accent taken from the crest.",
+      "Thunder in tall condensed capitals for headlines; Geist for reading and data.",
+      "Full-bleed photo panels under a dark overlay, with text set directly on them.",
+      "Dark pages broken by bright white bands.",
+      "Flat at rest; shadow and glow appear only on glass over photos or in response to touch.",
+      "Compact controls with a forward double arrow and a quick press-in on hover."
+    ],
+    "rules": [
+      {
+        "name": "The One Light Rule",
+        "body": "Crest Red is the only hue in the interface. Neutrals carry no tint, and no second accent is added. Colour in a photo is welcome; colour in the interface is not.",
+        "section": "colors"
+      },
+      {
+        "name": "The In Play Rule",
+        "body": "Red marks what is active or actionable. If nothing is happening there, it isn't red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Text Floor Rule",
+        "body": "Ash Grey is the lowest text colour on dark (6.50:1 on Hall Black). Line Grey measures 2.85:1 and is for lines only. The news indicator numbers currently break this rule and should be raised when next touched.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Type Rule",
+        "body": "Crest Red on Hall Black measures 3.69:1, so on dark it is for shapes and large text only. Small red text belongs on Floodlight White (4.83:1). White text on Crest Red also measures 4.83:1.",
+        "section": "colors"
+      },
+      {
+        "name": "The Latin Only Rule",
+        "body": "Thunder has every Serbian Latin letter (Š, Đ, Č, Ć, Ž) but no Cyrillic at all. Scraped team names arrive in Cyrillic, so they always stay in Geist. Never set unconverted Cyrillic data in a Thunder style.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Thunder is for names and headlines; Geist is for reading and data. Thunder never sets a paragraph, and Geist never sets a page headline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Band Rule",
+        "body": "Bright white bands break the dark page at section level: the gallery preview, the upcoming matches and the top of the footer. Use them to change the pace, not as a background for every other section.",
+        "section": "layout"
+      },
+      {
+        "name": "The Lit Photo Rule",
+        "body": "Text sits directly on full-bleed photos under a flat 65% black overlay. The photo stays visible and the text stays readable; no gradient scrims or text boxes.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat at Rest Rule",
+        "body": "Nothing casts a shadow at rest unless it is glass over a photo. Cards, forms and post panels stay flat and rise by tone.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Glow Answers Touch Rule",
+        "body": "Red glow is a reaction, never a decoration. It appears on hover and leaves with the pointer.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Marker Rule",
+        "body": "Small brand marks are squares, not dots or pills. There are no pill shapes in this system.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do use the existing variables in `src/index.css`. The OKLCH values are the source of truth.",
+      "Do keep red for what is active or actionable, following the One Light and In Play rules.",
+      "Do set headlines in uppercase Thunder and everything readable in Geist.",
+      "Do keep Geist for any Cyrillic or scraped data.",
+      "Do use a 65% black overlay when setting text on a full-bleed photo.",
+      "Do end every button with the double arrow.",
+      "Do add a visible focus state to any control you build or touch; none exist yet.",
+      "Do respect reduced-motion preferences in new motion work; the site doesn't handle this yet, including its smooth scrolling.",
+      "Do design for missing images, excerpts and translations, using the Charcoal well as the fallback."
+    ],
+    "donts": [
+      "Don't drift towards a corporate, sterile look with polish and no sport in it.",
+      "Don't drift towards a playful kids' club look, even on youth content.",
+      "Don't add a second accent colour or tint the neutrals.",
+      "Don't use Line Grey for text.",
+      "Don't put small Crest Red text on dark surfaces.",
+      "Don't add shadows to surfaces at rest, or use glow as decoration.",
+      "Don't use pill shapes or round dots for small marks.",
+      "Don't use Body size (0.75rem) for paragraphs.",
+      "Don't set unconverted Cyrillic text in Thunder."
+    ]
+  }
+}

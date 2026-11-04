@@ -8,7 +8,6 @@ import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import "./header.css";
 import { NavLink } from "react-router";
-import { Logo } from "../logo/logo";
 
 type HeaderProps = {
   className?: string;

@@ -10,19 +10,21 @@ function App() {
   return (
     <>
       <Header />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          {headerLinks.map((link) => (
-            <Route
-              key={link.path}
-              path={link.path}
-              element={<link.component />}
-            />
-          ))}
-          <Route path="/events/:slug" element={<SinglePostPage />} />
-        </Routes>
-      </Suspense>
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            {headerLinks.map((link) => (
+              <Route
+                key={link.path}
+                path={link.path}
+                element={<link.component />}
+              />
+            ))}
+            <Route path="/events/:slug" element={<SinglePostPage />} />
+          </Routes>
+        </Suspense>
+      </main>
       <Footer />
     </>
   );

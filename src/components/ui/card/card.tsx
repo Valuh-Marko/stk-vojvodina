@@ -1,7 +1,8 @@
 import { PiPlaceholderDuotone } from "react-icons/pi";
 import "./card.css";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Document } from "@contentful/rich-text-types";
 
 type TitlePosition = "default" | "bottom-right";
 
@@ -10,7 +11,7 @@ type CardProps = {
   titlePosition?: TitlePosition;
   imageUrl?: string;
   highlighted?: boolean;
-  excerpt?: any;
+  excerpt?: Document;
   className?: string;
   children?: React.ReactNode;
   onClick?: () => void;

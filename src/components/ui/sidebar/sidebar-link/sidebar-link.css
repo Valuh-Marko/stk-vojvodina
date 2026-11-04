@@ -1,11 +1,14 @@
 .c-sidebar-link {
-  color: var(--light50);
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--light70);
   padding: var(--spacing3) var(--spacing4);
-  font-weight: 600;
   font: var(--p);
+  text-align: start;
   text-transform: uppercase;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   line-height: 1rem;
   display: flex;
   align-items: center;
@@ -14,7 +17,13 @@
 
 .c-sidebar-link:hover {
   background: var(--gradient-0-10);
+  color: var(--light100);
   cursor: pointer;
+}
+
+.c-sidebar-link:focus-visible {
+  outline: var(--focus);
+  outline-offset: -2px;
 }
 
 .c-sidebar-link.selected {

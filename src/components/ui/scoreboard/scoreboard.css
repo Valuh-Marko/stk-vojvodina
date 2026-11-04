@@ -1,77 +1,217 @@
 .l-scoreboard {
-  background-image: linear-gradient(oklch(0% 0 0 / 0.65), oklch(0% 0 0 / 0.65)),
-    url(../../../assets/scoreboard-bg.webp);
+  /* The icon rail's width on phones: a 1rem icon plus the link's padding. */
+  --rail: calc(1rem + 2 * var(--spacing4));
+
+  --photo: linear-gradient(var(--overlay), var(--overlay)),
+    url(/assets/scoreboard-bg.webp);
+
+  background-image: var(--photo);
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: var(--spacing5);
+  padding: var(--spacing6) var(--spacing5);
+
+  @media screen and (max-width: 1024px) {
+    padding-inline: var(--spacing3);
+  }
 
   @media screen and (max-width: 768px) {
-    padding: var(--spacing6);
-    padding-right: var(--spacing4);
+    /* The rail stops at 100vh; its colour carries on down a taller table. */
+    background-image: linear-gradient(
+        90deg,
+        var(--bg) var(--rail),
+        transparent var(--rail)
+      ),
+      var(--photo);
+    padding-inline: calc(var(--rail) + var(--spacing2)) var(--spacing2);
   }
 }
 
 .c-scoreboard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-width: 100%;
+  /* 14px at both root sizes (16px, and 13px on phones). */
+  --data-size: 0.875rem;
 
-  @media screen and (max-width: 900px) {
-    overflow-x: auto;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  column-gap: var(--spacing3);
+
+  @media screen and (max-width: 768px) {
+    --data-size: 1.0769rem;
   }
 }
 
 .c-scoreboard__title {
+  font: var(--h2);
+  text-transform: none;
   margin-bottom: var(--spacing3);
-  margin-left: var(--spacing4);
+  margin-inline: var(--spacing4);
+
+  @media screen and (max-width: 768px) {
+    margin-inline: var(--spacing2);
+  }
 }
 
 .c-scoreboard__timestamp {
-  place-self: flex-end;
   margin-bottom: var(--spacing3);
-  margin-right: var(--spacing4);
+  margin-inline: var(--spacing4);
   display: flex;
   align-items: center;
   gap: var(--spacing2);
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    margin-inline: var(--spacing2);
+  }
 }
 
-.c-scoreboard-table {
-  grid-column: span 2;
-  --light5-50: oklch(2.015% 0.00011 271.152 / 50%);
+.c-scoreboard__card {
+  --pad-block: var(--spacing4);
+  --pad-inline: var(--spacing5);
+
+  container: scoreboard / inline-size;
+  flex: 0 0 100%;
+  min-width: 0;
   background: var(--light5-50);
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
-  padding: var(--spacing4) var(--spacing5);
+  padding: var(--pad-block) var(--pad-inline);
   backdrop-filter: blur(5px);
   box-shadow: var(--boxShadow);
-  border-radius: 0.5rem;
-  min-width: 40rem;
-}
+  border-radius: var(--radius);
+  font-size: var(--data-size);
+  line-height: 1.5;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--light50) transparent;
 
-.c-table__row {
-  grid-column: span 6;
-  display: grid;
-  grid-template-columns: subgrid;
-  border-bottom: 1px solid var(--light50);
-
-  &:last-of-type {
-    border-bottom: none;
+  &:focus-visible {
+    outline: var(--focus);
+    outline-offset: 2px;
   }
 
-  &.c-table__row--head {
-    font-weight: 600;
+  @media screen and (max-width: 1024px) {
+    --pad-block: var(--spacing3);
+    --pad-inline: var(--spacing3);
+  }
+
+  @media screen and (max-width: 768px) {
+    --pad-block: var(--spacing2);
+    --pad-inline: var(--spacing2);
+  }
+}
+
+/* Holds the height of the 13-row table so the page doesn't jump when it lands. */
+.c-scoreboard__card--state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(
+    13 * (1.5em + 2 * var(--spacing2) + 1px) + 2 * var(--pad-block) - 1px
+  );
+  text-align: center;
+}
+
+.c-scoreboard__message {
+  font: inherit;
+  max-width: 40ch;
+}
+
+.c-scoreboard__table {
+  width: 100%;
+  min-width: 17rem;
+  table-layout: fixed;
+  border-collapse: separate;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.c-scoreboard__row--head {
+  font-weight: 600;
+}
+
+.c-scoreboard__row--own .c-scoreboard__cell {
+  color: var(--light100);
+  font-weight: 600;
+  background: var(--dark5);
+
+  &:first-child {
+    box-shadow: inset 2px 0 0 var(--primary100);
   }
 }
 
 .c-scoreboard__cell {
   border-right: 1px solid var(--light50);
-  padding: var(--spacing2) var(--spacing2) var(--spacing2) var(--spacing3);
+  border-bottom: 1px solid var(--light50);
+  padding: var(--spacing2) var(--spacing3);
+  text-align: end;
+  overflow-wrap: anywhere;
 
-  &:last-of-type {
+  &:nth-child(2) {
+    width: calc(200% / 7);
+    text-align: start;
+  }
+
+  &:last-child {
     border-right: none;
+  }
+
+  tbody tr:last-child & {
+    border-bottom: none;
+  }
+}
+
+.c-scoreboard__label--short {
+  display: none;
+  text-decoration: none;
+}
+
+/* Too narrow for the full headers: abbreviate them so all six columns stay in view. */
+@container scoreboard (max-width: 40rem) {
+  .c-scoreboard__label {
+    display: none;
+  }
+
+  .c-scoreboard__label--short {
+    display: inline;
+  }
+
+  .c-scoreboard__cell {
+    border-right: none;
+    padding-inline: var(--spacing1);
+    width: 2.5rem;
+
+    &:first-child {
+      width: 2rem;
+    }
+
+    &:nth-child(2) {
+      width: auto;
+    }
+
+    &:last-child {
+      width: 2.75rem;
+    }
+  }
+}
+
+/* Only a zoomed-in phone gets this narrow: keep the team beside its numbers. */
+@media screen and (max-width: 300px) {
+  .c-scoreboard__cell:nth-child(2) {
+    --pin: var(--bg);
+
+    position: sticky;
+    left: 0;
+    background: var(--pin);
+    /* Covers the card's padding, or numbers slide past on the team's left. */
+    box-shadow: calc(-1 * var(--pad-inline)) 0 0 var(--pin);
+
+    .c-scoreboard__row--own & {
+      --pin: var(--dark5);
+    }
   }
 }

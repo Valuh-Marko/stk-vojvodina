@@ -19,9 +19,10 @@ export type RichTextDocument = {
 };
 
 export interface TypeSeoFields {
-  title?: string;
-  description?: string;
-  keywords?: string[];
+  metaTitle?: string;
+  metaDescription?: string;
+  ogImage?: Asset;
+  indexable?: boolean;
 }
 
 export interface TypeSeoSkeleton {
@@ -32,10 +33,7 @@ export interface TypeSeoSkeleton {
 export interface TypeBlogPageFields {
   title?: string;
   slug: string;
-  body?: {
-    nodeType: "document";
-    seo?: Entry<TypeSeoSkeleton>;
-  };
+  body?: RichTextDocument;
   image?: Asset;
   excerpt?: string;
   recommendedPosts?: TypeBlogPage[];
@@ -58,8 +56,8 @@ export type UseContentfulResult<T> = {
 export type PlayerFields = {
   playerName: string;
   age: string;
-  attributes: string;
   image?: Asset;
+  playerAtributes?: RichTextDocument;
 };
 
 export type PlayerSkeleton = {
@@ -83,3 +81,47 @@ export type ScoreboardSkeleton = {
 };
 
 export type ScoreboardEntry = Entry<ScoreboardSkeleton>;
+
+export type CoachFields = {
+  name: string;
+  role: string;
+  age: string;
+};
+
+export type CoachSkeleton = {
+  fields: CoachFields;
+  contentTypeId: "coach";
+};
+
+export type CoachEntry = Entry<CoachSkeleton>;
+
+export type MatchGame = {
+  player1: string;
+  player2: string;
+  gameScores?: string;
+  matchScore: string;
+};
+
+export type MatchRow = {
+  round: string;
+  date: string;
+  team1: string;
+  team2: string;
+  score?: string;
+  details?: MatchGame[];
+};
+
+export type MatchesFields = {
+  title?: string;
+  scoreboard?: {
+    rows: MatchRow[];
+    timestamp: string;
+  };
+};
+
+export type MatchesSkeleton = {
+  fields: MatchesFields;
+  contentTypeId: "matches";
+};
+
+export type MatchesEntry = Entry<MatchesSkeleton>;

@@ -10,7 +10,7 @@ const client = createClient({
 
 export const useContentfulAssets = <T,>(
   assetType: string[],
-  query: Record<string, any> = {},
+  query: Record<string, unknown> = {},
   limit?: number
 ): UseContentfulResult<T> => {
   const [data, setData] = useState<T[]>([]);

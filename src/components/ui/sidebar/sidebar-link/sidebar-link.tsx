@@ -2,6 +2,7 @@ import type { JSX } from "react";
 import "./sidebar-link.css";
 import type { IconType } from "react-icons";
 import { useTranslation } from "react-i18next";
+import { getHeroTabId, HERO_PANEL_ID } from "../../../../utils/constants";
 
 type SidebarLinkProps = {
   linkKey: string;
@@ -19,15 +20,21 @@ export const SidebarLink = ({
   const { t } = useTranslation(undefined, { keyPrefix: "navigation" });
 
   return (
-    <div
+    <button
+      type="button"
+      role="tab"
+      id={getHeroTabId(linkKey)}
       className={`c-sidebar-link ${selected ? "selected" : ""}`}
+      aria-label={t(linkKey)}
+      aria-selected={Boolean(selected)}
+      aria-controls={HERO_PANEL_ID}
+      tabIndex={selected ? 0 : -1}
       onClick={onClick}
-      key={linkKey}
     >
-      <div className="c-sidebar-link__icon">
+      <span className="c-sidebar-link__icon">
         {typeof icon === "function" ? icon({}) : icon}
-      </div>
-      <div className="c-sidebar-link__label">{t(linkKey)}</div>
-    </div>
+      </span>
+      <span className="c-sidebar-link__label">{t(linkKey)}</span>
+    </button>
   );
 };

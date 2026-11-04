@@ -1,19 +1,25 @@
 import { Suspense, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useContentful } from "../../../hooks/useContentful";
 import {
   type PlayerEntry,
   type TeamNavigationConfig,
 } from "../../../models/models";
-import Card from "../../ui/card/card";
+import { Button } from "../../ui/button/button";
 import TeamNavigation from "./teamNavigation/teamNavigation";
+import TeamRoster, { TeamRosterPlaceholder } from "./teamRoster/teamRoster";
 import "./teamSection.css";
 
 const TeamSection = () => {
-  const { data: players } = useContentful<PlayerEntry>("player");
+  const { t } = useTranslation(undefined, { keyPrefix: "homepage.our-team" });
+  const {
+    data: players,
+    loading,
+    error,
+    refetch,
+  } = useContentful<PlayerEntry>("player");
   const [selectedTab, setSelectedTab] =
     useState<TeamNavigationConfig>("seniors");
-
-  console.log(players);
 
   return (
     <Suspense>
@@ -22,18 +28,25 @@ const TeamSection = () => {
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
         />
-        <div className="c-team__cards">
-          {players &&
-            players.map((player) => (
-              <Card
-                key={player.sys.id}
-                imageUrl={player.fields?.image?.fields?.file?.url}
-                highlighted
-                title={player.fields.playerName as unknown as string}
-                excerpt={player.fields.playerAtributes}
-              />
-            ))}
-        </div>
+        {players.length > 0 ? (
+          <TeamRoster players={players} />
+        ) : loading ? (
+          <div role="status">
+            <span className="u-visually-hidden">{t("loading")}</span>
+            <TeamRosterPlaceholder />
+          </div>
+        ) : error ? (
+          <div className="l-team-section__state" role="alert">
+            <p className="l-team-section__message">{t("error")}</p>
+            <Button type="button" className="" onClick={refetch}>
+              {t("retry")}
+            </Button>
+          </div>
+        ) : (
+          <div className="l-team-section__state">
+            <p className="l-team-section__message">{t("empty")}</p>
+          </div>
+        )}
       </div>
     </Suspense>
   );

@@ -1,4 +1,3 @@
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { SOCIALS_LINKS as socialLinks } from "../../../utils/constants";
 import { Button } from "../../ui/button/button";
 import { HEADER_LINKS as links } from "../../../utils/constants";

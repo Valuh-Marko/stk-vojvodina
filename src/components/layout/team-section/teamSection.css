@@ -4,16 +4,15 @@
   margin: var(--spacing6) 0;
 }
 
-.c-team__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  align-items: center;
-  gap: var(--spacing4);
-  padding: 0 var(--spacing4) var(--spacing5) var(--spacing4);
+.l-team-section__state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing3);
+  padding-inline: var(--spacing4);
+}
 
-  & .c-card__image-wrapper {
-    width: 100%;
-    height: 30rem;
-    overflow: hidden;
-  }
+.l-team-section__message {
+  font: 300 1rem/1.5 var(--ff2);
+  color: var(--light70);
 }

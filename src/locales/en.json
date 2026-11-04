@@ -6,6 +6,7 @@
     "contact": "Contact",
     "topNews": "Top News",
     "scoreboard": "Scoreboard",
+    "homepage-sections": "Homepage sections",
     "calendar": "Calendar",
     "sponsors": {
       "sponsors-placeholder": "List of our sponsors will be announced soon!",
@@ -28,10 +29,30 @@
       "played": "Played",
       "wins": "Wins",
       "losses": "Losses",
-      "points": "Points"
+      "points": "Points",
+      "heading": "Scoreboard",
+      "loading": "Loading the table…",
+      "error": "The table couldn’t be loaded. Please try again.",
+      "retry": "Try again",
+      "empty": "The table hasn’t been published yet.",
+      "short": {
+        "position": "#",
+        "team": "Team",
+        "played": "P",
+        "wins": "W",
+        "losses": "L",
+        "points": "Pts"
+      },
+      "league": {
+        "Prva Liga Muskarci": "Prva Liga Men"
+      }
     },
     "our-team": {
       "heading": "Our Team",
+      "loading": "Loading the team…",
+      "error": "The team couldn’t be loaded. Please try again.",
+      "retry": "Try again",
+      "empty": "The team hasn’t been published yet.",
       "navigation": {
         "seniors": "Seniors",
         "coaching-staff": "Coaching Staff",

@@ -12,3 +12,8 @@
     z-index: 1;
   }
 }
+
+.c-sidebar__tabs {
+  display: flex;
+  flex-direction: column;
+}

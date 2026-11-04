@@ -6,6 +6,7 @@
     "contact": "Kontakt",
     "topNews": "Najnovije vesti",
     "scoreboard": "Tabela",
+    "homepage-sections": "Sadržaj naslovne strane",
     "calendar": "Kalendar",
     "sponsors": {
       "sponsors-placeholder": "Spisak naših sponzora biće uskoro objavljen!",
@@ -28,10 +29,30 @@
       "played": "Odigrano",
       "wins": "Pobede",
       "losses": "Porazi",
-      "points": "Poeni"
+      "points": "Poeni",
+      "heading": "Tabela",
+      "loading": "Učitavanje tabele…",
+      "error": "Tabelu nije moguće učitati. Pokušajte ponovo.",
+      "retry": "Pokušaj ponovo",
+      "empty": "Tabela još nije objavljena.",
+      "short": {
+        "position": "#",
+        "team": "Tim",
+        "played": "Od",
+        "wins": "Pob",
+        "losses": "Por",
+        "points": "Pn"
+      },
+      "league": {
+        "Prva Liga Muskarci": "Prva Liga Muškarci"
+      }
     },
     "our-team": {
       "heading": "Naš tim",
+      "loading": "Učitavanje tima…",
+      "error": "Tim nije moguće učitati. Pokušajte ponovo.",
+      "retry": "Pokušaj ponovo",
+      "empty": "Tim još nije objavljen.",
       "navigation": {
         "seniors": "Seniori",
         "coaching-staff": "Stručni štab",

@@ -23,6 +23,9 @@ export const HEADER_LINKS = [
   APP_ROUTES.contact,
 ];
 
+export const HERO_PANEL_ID = "hero-panel";
+export const getHeroTabId = (key: string) => "hero-tab-" + key;
+
 export const SIDEBAR_LINKS = [
   APP_ROUTES.topNews,
   APP_ROUTES.scoreboard,

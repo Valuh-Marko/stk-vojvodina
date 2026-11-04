@@ -11,13 +11,13 @@ const client = createClient({
 interface ContentfulContextType {
   getData: <T>(
     contentType: string,
-    query?: Record<string, any>
+    query?: Record<string, unknown>
   ) => Promise<T[]>;
   loading: boolean;
   error: Error | null;
 }
 
-export const ContentfulContext = createContext<
+const ContentfulContext = createContext<
   ContentfulContextType | undefined
 >(undefined);
 
@@ -30,7 +30,7 @@ export const ContentfulProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const getData = async <T,>(
     contentType: string,
-    query: Record<string, any> = {}
+    query: Record<string, unknown> = {}
   ): Promise<T[]> => {
     setLoading(true);
     setError(null);
@@ -43,8 +43,8 @@ export const ContentfulProvider: React.FC<{ children: React.ReactNode }> = ({
       const resolved = resolveResponse(res);
       setLoading(false);
       return resolved;
-    } catch (err: any) {
-      setError(err);
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)));
       setLoading(false);
       return [];
     }
