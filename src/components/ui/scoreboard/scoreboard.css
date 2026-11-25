@@ -30,8 +30,7 @@
 }
 
 .c-scoreboard {
-  /* 14px at both root sizes (16px, and 13px on phones). */
-  --data-size: 0.875rem;
+  --data-size: max(0.875rem, 14px);
 
   flex: 1;
   min-width: 0;
@@ -40,10 +39,6 @@
   align-items: flex-end;
   justify-content: space-between;
   column-gap: var(--spacing3);
-
-  @media screen and (max-width: 768px) {
-    --data-size: 1.0769rem;
-  }
 }
 
 .c-scoreboard__title {
@@ -171,7 +166,7 @@
 }
 
 /* Too narrow for the full headers: abbreviate them so all six columns stay in view. */
-@container scoreboard (max-width: 40rem) {
+@container scoreboard (max-width: 640px) {
   .c-scoreboard__label {
     display: none;
   }

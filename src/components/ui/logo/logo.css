@@ -9,7 +9,7 @@
 }
 
 .c-logo-img {
-  max-width: 64px;
+  max-width: 4rem;
   height: auto;
   margin-bottom: var(--spacing3);
 
@@ -30,7 +30,7 @@
 }
 
 .c-logo-description {
-  font-size: 0.75rem;
+  font-size: var(--small);
   line-height: 1.5em;
   color: var(--light70);
 

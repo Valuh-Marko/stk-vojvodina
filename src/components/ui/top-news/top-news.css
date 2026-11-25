@@ -11,8 +11,13 @@
 }
 
 .c-top-news-indicator {
+  /* A full touch target, on phones too, centred where the numbers stand. */
+  --target: max(2.75rem, 44px);
+
   position: absolute;
-  left: var(--spacing6);
+  z-index: 1;
+  top: 0;
+  left: calc(var(--spacing6) - var(--spacing3));
   height: 100%;
   display: flex;
   align-items: center;
@@ -25,60 +30,215 @@
 }
 
 .c-indicator {
+  width: var(--target);
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: var(--light50);
+  color: var(--light95);
   gap: var(--spacing2);
   cursor: pointer;
+  border-radius: var(--radius);
 
-  &:first-of-type {
-    .c-indicator__line {
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-    }
+  &:focus-visible {
+    outline: var(--focus);
+    outline-offset: -2px;
   }
 
-  &:last-of-type {
+  &:first-child .c-indicator__line {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  &:last-child {
+    flex-direction: column-reverse;
+
     .c-indicator__line {
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
     }
   }
+
+  @media (hover: hover) {
+    &:hover .c-indicator__line {
+      background-color: var(--light95);
+    }
+  }
 }
 
 .c-indicator.active {
-  cursor: initial;
-  pointer-events: none;
-  color: var(--light95);
+  cursor: default;
+  font-weight: 600;
 }
 
 .c-indicator.active .c-indicator__line {
   background-color: var(--light95);
-  width: 3px;
+  scale: none;
 }
 
+/* 3px throughout, narrowed to a 1px line until its story is on. */
 .c-indicator__line {
-  width: 1px;
-  background-color: var(--light50);
-  height: var(--spacing7);
+  width: 3px;
+  background-color: var(--light70);
+  height: min(var(--spacing7), 18vh);
+  overflow: hidden;
+  scale: 0.3334 1;
+  transition: scale 0.3s ease, background-color 0.3s ease;
+}
+
+.c-indicator__fill {
+  display: block;
+  height: 100%;
+  background-color: var(--primary100);
+  transform-origin: top;
+  animation: c-indicator-fill 8s linear both;
+
+  /* Waits for anyone off the stage, reading it, or about to use it. */
+  &[data-held="true"],
+  [inert] &,
+  .c-top-news-wrapper:has(:focus-visible) & {
+    animation-play-state: paused;
+  }
+
+  @media (hover: hover) {
+    .c-top-news-wrapper:has(
+        .c-top-news__body:hover,
+        .c-top-news-indicator > :hover
+      )
+      & {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes c-indicator-fill {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+.c-indicator-arrow {
+  width: var(--target);
+  height: var(--target);
+  flex-shrink: 0;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--light95);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    transition: translate 0.2s ease;
+  }
+
+  &:focus-visible {
+    outline: var(--focus);
+    outline-offset: -2px;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover svg {
+      translate: 0 var(--nudge);
+    }
+  }
+}
+
+.c-indicator-arrow--previous {
+  --nudge: -3px;
+
+  svg {
+    rotate: -90deg;
+  }
+}
+
+.c-indicator-arrow--next {
+  --nudge: 3px;
+
+  svg {
+    rotate: 90deg;
+  }
 }
 
 .c-top-news {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--spacing3);
+  position: relative;
   height: 100%;
   width: 100%;
-  background-size: cover;
-  background-position: center;
   padding: 0 var(--spacing7);
 
   @media screen and (max-width: 768px) {
     padding: 0 2rem 0 7.5rem;
     height: 100vh;
+  }
+}
+
+/* Stacked like the screens: a later photo dissolves over an opaque earlier one. */
+.c-top-news__photo {
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark5);
+  background-size: cover;
+  background-position: center;
+  visibility: hidden;
+  transition: opacity var(--switch) ease, visibility 0s linear var(--switch);
+
+  &[data-position="current"] {
+    visibility: inherit;
+    transition-delay: 0s;
+  }
+
+  &[data-position="after"] {
+    opacity: 0;
+  }
+}
+
+.c-top-news__stories {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center start;
+}
+
+/* The outgoing headline clears before the next one arrives. */
+.c-top-news__body {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing3);
+  opacity: 0;
+  visibility: hidden;
+  transition: translate var(--switch) var(--ease-glide), opacity 120ms ease,
+    visibility 0s linear 120ms;
+
+  &[data-position="current"] {
+    opacity: 1;
+    visibility: inherit;
+    transition: translate var(--switch) var(--ease-glide),
+      opacity 240ms ease 120ms;
+  }
+
+  &[data-position="before"] {
+    translate: 0 calc(-1 * var(--drift));
+  }
+
+  &[data-position="after"] {
+    translate: 0 var(--drift);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &[data-position] {
+      translate: none;
+    }
   }
 }
 
@@ -164,7 +324,7 @@
 
 .c-highlighted-post__category {
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: var(--small);
   color: var(--primary100);
 }
 

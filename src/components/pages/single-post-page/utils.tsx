@@ -1,6 +1,46 @@
 import type { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
-import type { Asset } from "contentful";
+import type { Document } from "@contentful/rich-text-types";
+import type { Asset, Entry } from "contentful";
+
+type PostFields = {
+  title?: string;
+  excerpt?: string;
+  body?: Document;
+  image?: Asset<undefined>;
+  recommendedPosts?: Entry[];
+};
+
+/* Everything a post is drawn with. Any of it can be missing. */
+export const getPostView = (entry?: unknown) => {
+  const post = entry as Entry | undefined;
+  const fields = post?.fields as unknown as PostFields | undefined;
+  const photo = fields?.image?.fields;
+  const { width, height } = photo?.file?.details?.image ?? {};
+  const url = photo?.file?.url;
+
+  return {
+    entry: post as Entry,
+    id: post?.sys?.id,
+    title: fields?.title,
+    excerpt: fields?.excerpt,
+    body: fields?.body as Document,
+    date: post?.sys?.updatedAt
+      ? new Date(post.sys.updatedAt)
+          .toLocaleDateString("sr-RS")
+          .replace(/\s/g, "")
+      : "",
+    photoUrl: url && `${url}?w=2000&fm=webp&q=80`,
+    photoAlt: photo?.description ?? "",
+    recommended: (fields?.recommendedPosts ?? []).filter((item) => item?.fields),
+    ratio: width && height ? width / height : 4 / 3,
+    orientation: !url
+      ? ("none" as const)
+      : width && height && height > width
+        ? ("portrait" as const)
+        : ("landscape" as const),
+  };
+};
 
 export const richTextRenderOptions: Options = {
   renderMark: {

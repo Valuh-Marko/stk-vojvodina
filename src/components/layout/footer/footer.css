@@ -34,6 +34,7 @@
 
 .c-footer__input {
   width: 100%;
+  font-size: max(0.875rem, 14px);
   padding: var(--spacing2);
   border-radius: var(--spacing2);
   border: 1px solid var(--bg);
@@ -95,7 +96,7 @@
 
 .c-footer__disclaimer {
   margin-top: 4rem;
-  font-size: 0.75rem;
+  font-size: var(--small);
   grid-column: span 3;
 
   @media screen and (max-width: 768px) {

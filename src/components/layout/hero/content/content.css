@@ -1,3 +1,69 @@
 .c-content {
+  display: grid;
+  grid-template: 1fr / minmax(0, 1fr);
   min-height: 100lvh;
+  position: relative;
+  overflow: clip;
+}
+
+/*
+ * The screens are stacked in tab order. A later one dissolves in and out over an
+ * earlier one that stays opaque, so the stage never dips to black halfway.
+ */
+.c-content__panel {
+  --switch: 360ms;
+  --drift: var(--spacing3);
+  --ease-glide: cubic-bezier(0.16, 1, 0.3, 1);
+
+  position: absolute;
+  inset: 0 0 auto;
+  height: 100lvh;
+  isolation: isolate;
+  background-color: var(--bg);
+  visibility: hidden;
+  transition: opacity var(--switch) ease, visibility 0s linear var(--switch);
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
+}
+
+/* Only the current screen is in flow, so the stage is always its height. */
+.c-content__panel[data-position="current"] {
+  position: relative;
+  height: auto;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.c-content__panel[data-position="after"] {
+  opacity: 0;
+}
+
+/*
+ * The text travels the way the tabs do. The photos behind it hold still. Text
+ * being covered clears early and returns late, so two screens never read at once.
+ */
+.c-content__drift {
+  --glide: translate var(--switch) var(--ease-glide);
+
+  transition: var(--glide), opacity 240ms ease 120ms;
+
+  [data-position="before"] & {
+    translate: 0 calc(-1 * var(--drift));
+    opacity: 0;
+    transition: var(--glide), opacity 120ms ease;
+  }
+
+  [data-position="after"] & {
+    translate: 0 var(--drift);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    --glide: translate 0s;
+
+    [data-position] & {
+      translate: none;
+    }
+  }
 }

@@ -19,6 +19,11 @@
   },
   "homepage": {
     "top-news": {
+      "heading": "Top news",
+      "controls": "Choose a story",
+      "story": "Story {{number}}",
+      "previous": "Previous story",
+      "next": "Next story",
       "read-more-btn": "Read More",
       "find-out-more-btn": "Find Out More"
     },

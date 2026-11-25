@@ -7,12 +7,13 @@
 }
 
 .loader {
-  width: 40px;
-  height: 40px;
+  font-size: max(1rem, 16px);
+  width: 2.5em;
+  height: 2.5em;
   --c: no-repeat linear-gradient(var(--primary100) 0 0);
   opacity: 0.75;
   background: var(--c), var(--c), var(--c), var(--c);
-  background-size: 21px 21px;
+  background-size: 1.3125em 1.3125em;
   animation: l5 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
 }
 @keyframes l5 {
@@ -21,13 +22,13 @@
   }
   33% {
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    width: 60px;
-    height: 60px;
+    width: 3.75em;
+    height: 3.75em;
   }
   66% {
     background-position: 100% 0, 100% 100%, 0 100%, 0 0;
-    width: 60px;
-    height: 60px;
+    width: 3.75em;
+    height: 3.75em;
   }
   100% {
     background-position: 100% 0, 100% 100%, 0 100%, 0 0;

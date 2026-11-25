@@ -29,7 +29,7 @@
 }
 
 .button--primary:hover {
-  box-shadow: 0px 0px 20px 0px var(--primary100);
+  box-shadow: 0 0 1.25rem 0 var(--primary100);
   scale: 0.95;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .button--small {
-  font-size: 0.75rem; /* smaller text */
+  font-size: var(--small);
   padding: var(--spacing2) var(--spacing3); /* smaller padding */
   margin-top: var(--spacing2);
 }

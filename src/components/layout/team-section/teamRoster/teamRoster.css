@@ -1,5 +1,5 @@
 .c-roster {
-  /* 124px at both root sizes: all seven fit from about 1004px wide. */
+  /* All seven fit from about 816px wide. */
   --frame-min: 7.75rem;
 
   @media screen and (max-width: 768px) {
@@ -85,12 +85,7 @@
 
 /* Tooltip content renders in a portal, outside .c-roster. */
 .c-player-tt {
-  /* 14px at both root sizes (16px, and 13px on phones). */
-  --data-size: 0.875rem;
-
-  @media screen and (max-width: 768px) {
-    --data-size: 1.0769rem;
-  }
+  --data-size: max(0.875rem, 14px);
 }
 
 .c-player-tt__name {

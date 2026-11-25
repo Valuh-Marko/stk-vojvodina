@@ -19,6 +19,11 @@
   },
   "homepage": {
     "top-news": {
+      "heading": "Najnovije vesti",
+      "controls": "Izbor vesti",
+      "story": "Vest {{number}}",
+      "previous": "Prethodna vest",
+      "next": "Sledeća vest",
       "read-more-btn": "Pročitaj više",
       "find-out-more-btn": "Saznaj više"
     },

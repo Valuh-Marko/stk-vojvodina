@@ -31,7 +31,7 @@
 }
 
 .c-form-card__description {
-  font-size: 0.875rem;
+  font-size: max(0.875rem, var(--small));
   opacity: 0.9;
 }
 
@@ -58,17 +58,17 @@
 }
 
 .c-field__label {
-  font-size: 0.875rem;
+  font-size: max(0.875rem, var(--small));
   font-weight: 500;
 }
 
 .c-field__description {
-  font-size: 0.75rem;
+  font-size: var(--small);
   opacity: 0.8;
 }
 
 .c-field__error {
-  font-size: 0.75rem;
+  font-size: var(--small);
   font-weight: 500;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .c-form-input-group__text {
-  font-size: 0.75rem;
+  font-size: var(--small);
   line-height: 1;
   white-space: nowrap;
   opacity: 0.5;

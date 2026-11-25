@@ -69,7 +69,7 @@ export const Scoreboard = () => {
 
   return (
     <div className="l-scoreboard">
-      <div className="c-scoreboard">
+      <div className="c-scoreboard c-content__drift">
         <h1 className="c-scoreboard__title" id={titleId}>
           {title}
         </h1>

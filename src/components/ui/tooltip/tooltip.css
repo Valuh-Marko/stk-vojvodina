@@ -6,8 +6,7 @@
 .c-tooltip {
   --tt-bg: var(--primary100);
   --tt-fg: var(--light100);
-  /* 304px at the 16px root, 305px at the 13px root on phones. */
-  --tt-width: 19rem;
+  --tt-width: max(19rem, 304px);
 
   position: fixed;
   top: 0;
@@ -27,10 +26,6 @@
   &.is-open {
     visibility: visible;
     transition-delay: 0s;
-  }
-
-  @media screen and (max-width: 768px) {
-    --tt-width: 23.5rem;
   }
 }
 
