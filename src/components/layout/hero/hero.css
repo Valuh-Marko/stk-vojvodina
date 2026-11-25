@@ -5,7 +5,13 @@
   position: relative;
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: minmax(0, 1fr);
+    /* The tabs stick to the bottom of the screen for as long as the stage is up.
+       A grid would hold them in their own row. */
+    --tabs: max(3.75rem, 48px);
+    --stage: calc(100svh - var(--tabs));
+
+    display: flex;
+    flex-direction: column;
     min-height: auto;
   }
 }

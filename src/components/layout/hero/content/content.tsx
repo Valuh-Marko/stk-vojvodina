@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import type { CSSProperties, JSX } from "react";
 import type { Category } from "../../../../models/models";
 import { TopNews } from "../../../ui/top-news/top-news";
 import { Scoreboard } from "../../../ui/scoreboard/scoreboard";
@@ -13,9 +13,15 @@ import "./content.css";
 type ContentProps = {
   className?: string;
   selectedCategory?: Category;
+  // How far down the page the last switch was made.
+  scrolled?: number;
 };
 
-export const Content = ({ className, selectedCategory }: ContentProps) => {
+export const Content = ({
+  className,
+  selectedCategory,
+  scrolled = 0,
+}: ContentProps) => {
   const content: Record<Category, JSX.Element> = {
     topNews: <TopNews />,
     scoreboard: <Scoreboard />,
@@ -29,6 +35,7 @@ export const Content = ({ className, selectedCategory }: ContentProps) => {
       role="tabpanel"
       aria-labelledby={selectedCategory && getHeroTabId(selectedCategory)}
       className={`c-content ${className ? className : ""}`}
+      style={{ "--scrolled": `${scrolled}px` } as CSSProperties}
     >
       {/* Every screen stays mounted, so a switch never fades in a loader. */}
       {selectedCategory &&

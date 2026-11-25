@@ -213,7 +213,7 @@ The home page opens with a full-height stage: a 15rem channel sidebar beside a f
 
 Card collections use auto-fitting grids that fill the available width: contact from 25rem, news from 30rem. The gallery and its home preview are a bento of √2:1 cells, four across and two below a 768px container, in which every photo keeps its own orientation: landscape one cell, portrait two cells tall, panorama two wide, and about one landscape in six a two-by-two feature. The bottom edge closes flush. The player roster is the exception: it is a single track that fills the row while it can and scrolls sideways when it can't, so a squad of any size never breaks into uneven rows. News rows open up with a larger 5rem gap between rows than between columns.
 
-The main breakpoint is 768px. Below it the header gains a menu toggle and the crest, the sidebar shrinks to an icon rail over the photo panel, and the highlighted tile moves into the page flow. The league table abbreviates its headers when its card is narrower than 640px, so all six columns stay in view; it only scrolls sideways at extreme zoom.
+The main breakpoint is 768px. Below it the header gains a menu toggle and the crest, the sidebar becomes a tab bar along the bottom of the screen, the stage fills what is left above it, and the highlighted tile moves into the page flow. The league table abbreviates its headers when its card is narrower than 640px, so all six columns stay in view; it only scrolls sideways at extreme zoom.
 
 **The Band Rule.** Bright white bands break the dark page at section level: the gallery preview, the upcoming matches and the top of the footer. Use them to change the pace, not as a background for every other section.
 
@@ -275,7 +275,7 @@ The feel throughout is quick and direct, like a sharp return: compact, forward-l
 - **Mobile:** A toggle opens a right-aligned link stack, and the crest appears on the left.
 
 ### Channel Sidebar
-The home page's signature control. A column of uppercase links with icons switches what the stage shows. The selected channel gets a soft gradient and a 2px Crest Red edge on its right side, pointing at the panel it controls. Below 768px the labels hide and it becomes an icon rail.
+The home page's signature control. A column of uppercase links with icons switches what the stage shows. The selected channel gets a soft gradient and a 2px Crest Red edge on its right side, pointing at the panel it controls. Below 768px it is a bottom bar of equal tabs, icon beside label, at least 48px tall. It sticks to the bottom of the screen while the stage is up and leaves with it. The red edge moves to the top of the tab, still pointing at the panel, and screens drift sideways, the way the tabs run. Switching from further down opens the next screen at its top.
 
 ### League Table
 Smoked glass over a darkened hall photo, with Line Grey rules between cells, a title on the left and the update date on the right. Cells stay in Geist so Cyrillic team names render properly. Below a 640px card width the headers abbreviate and all six columns stay in view. The club's own row carries a flat Hall Charcoal band and a 2px Crest Red edge.

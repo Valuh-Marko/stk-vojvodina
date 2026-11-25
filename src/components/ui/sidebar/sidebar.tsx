@@ -1,7 +1,11 @@
 import type { KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { SidebarLink } from "./sidebar-link/sidebar-link";
-import { SIDEBAR_LINKS as links } from "../../../utils/constants";
+import { useMediaQuery } from "../../../hooks/useMediaQuery";
+import {
+  MOBILE_QUERY,
+  SIDEBAR_LINKS as links,
+} from "../../../utils/constants";
 import { Logo } from "../logo/logo";
 import type { Category } from "../../../models/models";
 import "./sidebar.css";
@@ -18,6 +22,8 @@ export const Sidebar = ({
   onCategoryChange,
 }: SidebarProps) => {
   const { t } = useTranslation(undefined, { keyPrefix: "navigation" });
+  // A bottom bar on phones, a column everywhere else.
+  const isRow = useMediaQuery(MOBILE_QUERY);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const tabs = Array.from(
@@ -25,8 +31,8 @@ export const Sidebar = ({
     );
     const current = tabs.indexOf(event.target as HTMLElement);
     const targets: Record<string, number> = {
-      ArrowDown: current + 1,
-      ArrowUp: current - 1,
+      [isRow ? "ArrowRight" : "ArrowDown"]: current + 1,
+      [isRow ? "ArrowLeft" : "ArrowUp"]: current - 1,
       Home: 0,
       End: tabs.length - 1,
     };
@@ -45,7 +51,7 @@ export const Sidebar = ({
       <div
         className="c-sidebar__tabs"
         role="tablist"
-        aria-orientation="vertical"
+        aria-orientation={isRow ? "horizontal" : "vertical"}
         aria-label={t("homepage-sections")}
         onKeyDown={handleKeyDown}
       >

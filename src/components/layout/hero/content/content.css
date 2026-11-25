@@ -4,6 +4,15 @@
   min-height: 100lvh;
   position: relative;
   overflow: clip;
+
+  @media screen and (max-width: 768px) {
+    min-height: var(--stage);
+
+    /* Keeps what the keyboard reaches clear of the pinned tabs. */
+    :is(a, button) {
+      scroll-margin-bottom: calc(var(--tabs) + var(--spacing2));
+    }
+  }
 }
 
 /*
@@ -16,7 +25,7 @@
   --ease-glide: cubic-bezier(0.16, 1, 0.3, 1);
 
   position: absolute;
-  inset: 0 0 auto;
+  inset: calc(-1 * var(--scrolled)) 0 auto;
   height: 100lvh;
   isolation: isolate;
   background-color: var(--bg);
@@ -31,6 +40,7 @@
 /* Only the current screen is in flow, so the stage is always its height. */
 .c-content__panel[data-position="current"] {
   position: relative;
+  top: 0;
   height: auto;
   visibility: visible;
   transition-delay: 0s;
@@ -46,17 +56,24 @@
  */
 .c-content__drift {
   --glide: translate var(--switch) var(--ease-glide);
+  --to-next: 0 var(--drift);
+  --to-previous: 0 calc(-1 * var(--drift));
 
   transition: var(--glide), opacity 240ms ease 120ms;
 
   [data-position="before"] & {
-    translate: 0 calc(-1 * var(--drift));
+    translate: var(--to-previous);
     opacity: 0;
     transition: var(--glide), opacity 120ms ease;
   }
 
   [data-position="after"] & {
-    translate: 0 var(--drift);
+    translate: var(--to-next);
+  }
+
+  @media screen and (max-width: 768px) {
+    --to-next: var(--drift) 0;
+    --to-previous: calc(-1 * var(--drift)) 0;
   }
 
   @media (prefers-reduced-motion: reduce) {

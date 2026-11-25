@@ -4,16 +4,24 @@
   background-color: var(--bg);
 
   @media screen and (max-width: 768px) {
-    position: absolute;
-    justify-content: center;
-    height: 100vh;
-    left: 0;
-    top: 0;
+    position: sticky;
+    bottom: 0;
     z-index: 1;
+    order: 1;
+
+    /* The header shows the crest here. */
+    .c-logo {
+      display: none;
+    }
   }
 }
 
 .c-sidebar__tabs {
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+    height: var(--tabs);
+  }
 }

@@ -25,7 +25,8 @@
   flex-direction: column;
 
   @media screen and (max-width: 768px) {
-    height: 100vh;
+    left: var(--spacing1);
+    height: var(--stage);
   }
 }
 
@@ -88,6 +89,15 @@
   overflow: hidden;
   scale: 0.3334 1;
   transition: scale 0.3s ease, background-color 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    /* On short screens, whatever the arrows and numbers leave below the header. */
+    height: min(
+      var(--spacing7),
+      18vh,
+      (var(--stage) - 2 * 4rem - 2 * var(--target) - 3.25rem) / 2
+    );
+  }
 }
 
 .c-indicator__fill {
@@ -177,8 +187,10 @@
   padding: 0 var(--spacing7);
 
   @media screen and (max-width: 768px) {
-    padding: 0 2rem 0 7.5rem;
-    height: 100vh;
+    /* Clears the header, and the numbers on the left. */
+    padding: var(--spacing6) var(--spacing4) var(--spacing6) 3.75rem;
+    height: auto;
+    min-height: var(--stage);
   }
 }
 

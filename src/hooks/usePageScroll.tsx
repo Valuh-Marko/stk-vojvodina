@@ -1,6 +1,7 @@
 import { useLenis } from "lenis/react";
 import { useEffect, useLayoutEffect, useRef, type RefObject } from "react";
 import { useLocation, useNavigationType } from "react-router";
+import { jumpTo } from "../utils/scroll";
 
 const STORAGE_KEY = "scroll-positions";
 const DISSOLVE = { duration: 360, easing: "cubic-bezier(0.16, 1, 0.3, 1)" };
@@ -75,14 +76,7 @@ export const usePageScroll = (mainRef: RefObject<HTMLElement | null>) => {
     };
     const stopTracking = () => window.removeEventListener("scroll", track);
 
-    // Stopping Lenis drops whatever is left of a wheel scroll, and resizing it
-    // lets go of the old page's height.
-    const jump = (top: number) => {
-      lenisRef.current?.stop();
-      window.scrollTo({ top, behavior: "instant" });
-      lenisRef.current?.resize();
-      lenisRef.current?.start();
-    };
+    const jump = (top: number) => jumpTo(top, lenisRef.current);
 
     // A link to the page the visitor is already on.
     if (isSamePage && !isReturn) {

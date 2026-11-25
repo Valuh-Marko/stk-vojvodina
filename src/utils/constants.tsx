@@ -23,6 +23,8 @@ export const HEADER_LINKS = [
   APP_ROUTES.contact,
 ];
 
+export const MOBILE_QUERY = "(max-width: 768px)";
+
 export const HERO_PANEL_ID = "hero-panel";
 export const getHeroTabId = (key: string) => "hero-tab-" + key;
 
