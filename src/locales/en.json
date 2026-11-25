@@ -68,6 +68,16 @@
       "heading": "Gallery"
     }
   },
+  "gallery": {
+    "heading": "Gallery",
+    "photo": "Photo {{number}} of {{total}}",
+    "viewer": "Photo viewer",
+    "close": "Close photo",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "error": "The photos couldn’t be loaded. Please try again.",
+    "empty": "No photos have been published yet."
+  },
   "events": {
     "title": "Events"
   },

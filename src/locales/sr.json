@@ -68,6 +68,16 @@
       "heading": "Galerija"
     }
   },
+  "gallery": {
+    "heading": "Galerija",
+    "photo": "Fotografija {{number}} od {{total}}",
+    "viewer": "Pregled fotografija",
+    "close": "Zatvori fotografiju",
+    "previous": "Prethodna fotografija",
+    "next": "Sledeća fotografija",
+    "error": "Fotografije nije moguće učitati. Pokušajte ponovo.",
+    "empty": "Još nema objavljenih fotografija."
+  },
   "events": {
     "title": "Događaji"
   },

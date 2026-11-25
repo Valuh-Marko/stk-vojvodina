@@ -1,0 +1,84 @@
+.c-photo-grid {
+  container-type: inline-size;
+}
+
+.c-photo-grid__tiles {
+  --cols: 2;
+  --gap: var(--spacing2);
+
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  /* √2 wide to 1 tall (see bento.ts), less what the gap adds to a portrait, so
+     4:3 and 3:4 photos are cropped by the same amount. */
+  grid-auto-rows: calc(
+    (100cqw - (var(--cols) - 1) * var(--gap)) / var(--cols) / 1.4142 -
+      var(--gap) / 4
+  );
+  gap: var(--gap);
+
+  @container (min-width: 768px) {
+    --cols: 4;
+    --gap: var(--spacing3);
+  }
+}
+
+.c-photo-grid__tile {
+  grid-area: var(--area-narrow);
+  position: relative;
+
+  @container (min-width: 768px) {
+    grid-area: var(--area-wide);
+  }
+
+  /* A photo flying home passes over the tiles around it. */
+  &[data-active="true"] {
+    z-index: 1;
+  }
+}
+
+.c-photo-grid__button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--dark5);
+  color: inherit;
+  font: inherit;
+  cursor: zoom-in;
+  /* Clears the fixed header when the lightbox brings a tile into view. */
+  scroll-margin: var(--spacing6) 0 var(--spacing4);
+
+  &:focus-visible {
+    outline: var(--photo-focus, var(--focus));
+    outline-offset: 2px;
+  }
+}
+
+.c-photo-grid__frame {
+  container-type: size;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Covers the tile at its true proportions instead of object-fit, so the same
+   box can grow into the lightbox without stretching. */
+.c-photo-grid__image {
+  display: block;
+  width: max(100cqw, 100cqh * var(--ratio));
+  max-width: none;
+  height: auto;
+  aspect-ratio: var(--ratio);
+  transition: scale 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .c-photo-grid__button:hover & {
+      scale: 1.05;
+    }
+  }
+}

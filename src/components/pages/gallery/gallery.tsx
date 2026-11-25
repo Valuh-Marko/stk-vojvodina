@@ -1,11 +1,19 @@
 import type { Asset } from "contentful";
+import { useTranslation } from "react-i18next";
 import { useContentfulAssets } from "../../../hooks/useContentfulAssets";
-import Card from "../../ui/card/card";
 import Loader from "../../ui/loader/loader";
+import PhotoGrid from "../../ui/photo-grid/photo-grid";
+import { toPhotos } from "../../ui/photo-grid/photos";
 import "./gallery.css";
 
+const TAGS = ["gallery"];
+
 const Gallery = () => {
-  const { data, loading, error } = useContentfulAssets<Asset<undefined>>(["gallery"], {});
+  const { t, i18n } = useTranslation(undefined, { keyPrefix: "gallery" });
+  const { data, loading, error } = useContentfulAssets<Asset<undefined>>(TAGS, {
+    locale: i18n.language,
+  });
+  const photos = toPhotos(data);
 
   if (loading)
     return (
@@ -13,23 +21,18 @@ const Gallery = () => {
         <Loader />
       </div>
     );
-  if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <>
-      <section className="l-gallery">
-        <h2 className="c-gallery__title">Gallery</h2>
-        <div className="c-gallery__images">
-          {data?.map((image) => (
-            <Card
-              className="c-gallery__image"
-              key={image.sys.id}
-              imageUrl={image.fields.file?.url}
-            />
-          ))}
-        </div>
-      </section>
-    </>
+    <section className="l-gallery">
+      <h2 className="c-gallery__title">{t("heading")}</h2>
+      {photos.length > 0 ? (
+        <PhotoGrid photos={photos} />
+      ) : (
+        <p className="c-gallery__message" role={error ? "alert" : undefined}>
+          {t(error ? "error" : "empty")}
+        </p>
+      )}
+    </section>
   );
 };
 

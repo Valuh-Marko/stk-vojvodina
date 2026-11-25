@@ -1,0 +1,186 @@
+/* Holds the page still behind the photo without the layout shifting. */
+html:has(.c-lightbox[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
+
+.c-lightbox {
+  /* A full touch target, on phones too. */
+  --target: max(2.75rem, 44px);
+  --side: calc(var(--target) + 2 * var(--spacing3));
+
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--light95);
+  overflow: hidden;
+  overscroll-behavior: contain;
+
+  &::backdrop {
+    background: none;
+  }
+
+  &[data-leaving="true"] {
+    pointer-events: none;
+  }
+}
+
+.c-lightbox__dark {
+  position: absolute;
+  inset: 0;
+  background-color: color-mix(in oklch, var(--bg) 94%, transparent);
+}
+
+.c-lightbox__stage {
+  position: absolute;
+  inset: var(--target) var(--side) calc(var(--target) + var(--spacing4));
+  touch-action: pinch-zoom;
+
+  @media screen and (max-width: 768px) {
+    inset: calc(var(--target) + var(--spacing3)) var(--spacing3)
+      calc(2 * var(--target) + var(--spacing3));
+  }
+}
+
+.c-lightbox__track {
+  container-type: size;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  place-items: center;
+}
+
+.c-lightbox__slide,
+.c-lightbox__photo--leaving {
+  grid-area: 1 / 1;
+}
+
+/* As large as the stage allows, but never blown up past its own pixels. */
+.c-lightbox__photo {
+  display: block;
+  width: min(100cqw, 100cqh * var(--ratio), var(--natural));
+  aspect-ratio: var(--ratio);
+  overflow: hidden;
+}
+
+.c-lightbox__photo--leaving {
+  pointer-events: none;
+}
+
+.c-lightbox__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark5);
+  background-size: 100% 100%;
+  user-select: none;
+}
+
+.c-lightbox__controls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  > button {
+    pointer-events: auto;
+  }
+}
+
+.c-lightbox__button {
+  position: absolute;
+  width: var(--target);
+  height: var(--target);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--light95);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    transition: translate 0.2s ease;
+  }
+
+  &:focus-visible {
+    outline: var(--focus);
+    outline-offset: -2px;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover svg {
+      translate: var(--nudge, 0) 0;
+    }
+  }
+}
+
+.c-lightbox__button--close {
+  top: var(--spacing3);
+  right: var(--spacing3);
+}
+
+.c-lightbox__button--previous {
+  --nudge: -3px;
+
+  left: var(--spacing3);
+  bottom: calc(50% - var(--target) / 2);
+
+  svg {
+    rotate: 180deg;
+  }
+}
+
+.c-lightbox__button--next {
+  --nudge: 3px;
+
+  right: var(--spacing3);
+  bottom: calc(50% - var(--target) / 2);
+}
+
+.c-lightbox__button--previous,
+.c-lightbox__button--next {
+  @media screen and (max-width: 768px) {
+    bottom: var(--spacing3);
+  }
+}
+
+.c-lightbox__bar {
+  position: absolute;
+  left: var(--side);
+  right: var(--side);
+  bottom: 0;
+  min-height: calc(var(--target) + var(--spacing4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing3);
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    bottom: var(--spacing3);
+    min-height: var(--target);
+    flex-direction: column;
+    gap: var(--spacing1);
+  }
+}
+
+.c-lightbox__caption {
+  font: 300 max(1rem, 14px) / 1.4 var(--ff2);
+}
+
+.c-lightbox__count {
+  font: 300 max(1rem, 14px) / 1.4 var(--ff2);
+  font-variant-numeric: tabular-nums;
+  color: var(--light70);
+  white-space: nowrap;
+}
