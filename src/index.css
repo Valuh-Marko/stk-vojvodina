@@ -144,6 +144,12 @@ main {
   flex-direction: column;
 }
 
+/* A page that is still loading fills the screen, so the footer doesn't show up
+   before the content that belongs above it. */
+main > :has(> .c-loader:only-child) {
+  min-height: 100lvh;
+}
+
 /* Variables */
 :root {
   --primary100: oklch(55.57% 0.20969 29.947);

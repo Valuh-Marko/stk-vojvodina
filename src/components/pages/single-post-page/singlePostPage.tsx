@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { useContentful } from "../../../hooks/useContentful";
 import type { TypeBlogPage } from "../../../models/models";
@@ -12,7 +11,7 @@ import { getPostView, richTextRenderOptions } from "./utils";
 
 const MORE_COUNT = 3;
 
-const SinglePostPage = () => {
+const SinglePost = () => {
   const { t } = useTranslation(undefined, { keyPrefix: "single-event" });
   const { t: tNav } = useTranslation(undefined, { keyPrefix: "navigation" });
   const { slug } = useParams();
@@ -21,11 +20,6 @@ const SinglePostPage = () => {
   });
 
   const { data: latest } = useContentful<TypeBlogPage>("blogPage");
-
-  // Moving on to another post starts it from the top.
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [slug]);
 
   const {
     title,
@@ -98,6 +92,12 @@ const SinglePostPage = () => {
       )}
     </div>
   );
+};
+
+// Every post starts fresh, so the one before it never shows under its address.
+const SinglePostPage = () => {
+  const { slug } = useParams();
+  return <SinglePost key={slug} />;
 };
 
 export default SinglePostPage;
